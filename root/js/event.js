@@ -27,5 +27,10 @@ $(function(){
         }else{
             $("header").css("top", "-10vh")
         }
+
+        ReactDOM.render(
+            <Arrow />,
+            $("#site-wrapper")[0]
+        )
     });
 });
