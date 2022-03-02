@@ -1,4 +1,8 @@
 let screenHeight = window.innerHeight;
+const pageHeight = document.body.clientHeight;
+const wrapper =$("#site-wrapper");
+const div = "<div></div>";
+let scrollFlag = true;
 
 $(function(){
     $(document).on("mouseover", ".nav-item:not(.just-hover)", function(){
@@ -19,6 +23,12 @@ $(function(){
         });
     });
 
+    $(document).on("click", "#arrow-container", () => {
+        let margin = window.innerHeight * 0.14;
+        let main = $("#main-contents").offset().top;
+        $('html, body').animate({scrollTop: main - margin});
+    });
+
     $(window).scroll(() => {
         let wh = window.innerHeight;
         let st = $(window).scrollTop();
@@ -28,9 +38,28 @@ $(function(){
             $("header").css("top", "-10vh")
         }
 
-        ReactDOM.render(
-            <Arrow />,
-            $("#site-wrapper")[0]
-        )
+        let bottom = pageHeight - wh - 460;
+        if(bottom <= st && scrollFlag){
+            scrollFlag = false;
+            let elem = $(div).addClass("fixed-rb");
+            wrapper.append(elem);
+            ReactDOM.render(
+                <Arrow />,
+                elem[0],
+                () => {
+                    $(".fixed-rb").css(
+                        "bottom", "7vh"
+                    );
+                }
+            );
+        }else if(bottom >= st && !(scrollFlag)){
+            $(".fixed-rb").css(
+                "bottom", "-10vh"
+            );
+            setTimeout(()=>{
+                scrollFlag = true;
+                $(".fixed-rb").remove();
+            }, 200)
+        }
     });
 });
