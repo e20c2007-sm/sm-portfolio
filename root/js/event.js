@@ -41,25 +41,22 @@ $(function(){
         let bottom = pageHeight - wh - 460;
         if(bottom <= st && scrollFlag){
             scrollFlag = false;
-            let elem = $(div).addClass("fixed-rb");
+            let elem = $(div).addClass("fixed-rb fixed-rb-in");
             wrapper.append(elem);
             ReactDOM.render(
                 <Arrow />,
-                elem[0],
-                () => {
-                    $(".fixed-rb").css(
-                        "bottom", "7vh"
-                    );
-                }
+                elem[0]
             );
         }else if(bottom >= st && !(scrollFlag)){
-            $(".fixed-rb").css(
-                "bottom", "-10vh"
-            );
+            $(".fixed-rb").addClass("fixed-rb-out");
             setTimeout(()=>{
                 scrollFlag = true;
                 $(".fixed-rb").remove();
             }, 200)
         }
+    });
+    
+    $(document).on("animationend", ".fixed-rb-in", function(){
+        $(this).removeClass("fixed-rb-in");
     });
 });

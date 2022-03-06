@@ -45,15 +45,29 @@ body{
 .fixed-rb{
     position: fixed;
     right: 3vw;
-    bottom: -10vh;
+    bottom: 7vh;
     z-index: 20;
-    transition: 300ms;
+}
+.fixed-rb-in{
+    animation: fadeInBottom 200ms linear forwards;
+}
+.fixed-rb-out{
+    animation: fadeInBottom 200ms linear forwards reverse;
+}
+@keyframes fadeInBottom{
+    from{
+        bottom: -10vh;
+    }
+    to{
+        bottom: 7vh;
+    }
 }
 
 #site-wrapper{
     width: 100vw;
     min-height: 100vh;
     position: relative;
+    z-index: 2;
 }
 
 /* メイン */
@@ -64,7 +78,7 @@ main{
 #page-thumb{
     width: 100vw;
     height: 100vh;
-    background-color: red;
+    /* background-color: red; */
 }
 #page-thumb *{
     pointer-events: none;
@@ -75,7 +89,7 @@ main{
     height: 130vh;
     margin-top: 15vh;
     padding: 1rem 0;
-    background-color: blue;
+    background: linear-gradient(#ffffff00 0%, #ffffff7e 5%, #ffffff7e 100%);
 }
 
 /* ヘッダー */
@@ -258,6 +272,48 @@ footer{
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
+}
+
+/* 背景 */
+#site-bg{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#fffd96 35%, #fffec1 65%, #fffd96 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#site-bg-container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+.move-left{
+    animation: moveBox 15s forwards linear, rotate 5s infinite;
+}
+.move-right{
+    animation: moveBox 15s forwards linear reverse, rotate 5s infinite reverse;
+}
+@keyframes moveBox{
+    from{
+        transform: rotate(0deg);
+        left: -10vw;
+    }
+    to{
+        transform: rotate(360deg);
+        left: 110vw;
+    }
 }
 
 
