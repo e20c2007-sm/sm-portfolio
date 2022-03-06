@@ -6,13 +6,14 @@ class BgBox extends React.Component{
         const position = this.props.posit;
 
         return(
-            <div class={`bg-box move-${way}`} style={`
-                width: ${size};
-                height: ${size};
-                background: ${color};
-                position: absolute;
-                top: ${position}vh;
-            `}></div>
+            <div class={`bg-box move-${way}`} style={{
+                width: size,
+                height: size,
+                background: color,
+                opacity: "0.5",
+                position: "absolute",
+                top: `${position}vh`
+            }}></div>
         )
     }
 }
@@ -22,7 +23,7 @@ let cont = $("#site-bg-container");
 const pattern = [
     {
         size: "10vw",
-        color: "#FA9C43"
+        color: "#FABC61"
     },
     {
         size: "6vw",
@@ -51,4 +52,4 @@ addBgBox("left", randomNum(3)-1);
 setInterval(()=>{
     addBgBox("right", randomNum(3)-1);
     addBgBox("left", randomNum(3)-1);
-}, 3000);
+}, 5000);

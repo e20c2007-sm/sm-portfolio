@@ -293,17 +293,17 @@ footer{
 
 @keyframes rotate{
     from{
-        transform: rotate(360deg);
+        transform: rotate(180deg);
     }
     to{
         transform: rotate(0deg);
     }
 }
 .move-left{
-    animation: moveBox 15s forwards linear, rotate 5s infinite;
+    animation: moveBox 25s forwards linear, rotate 15s infinite linear;
 }
 .move-right{
-    animation: moveBox 15s forwards linear reverse, rotate 5s infinite reverse;
+    animation: moveBox 25s forwards linear reverse, rotate 15s infinite linear reverse;
 }
 @keyframes moveBox{
     from{
