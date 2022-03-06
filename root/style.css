@@ -300,19 +300,19 @@ footer{
     }
 }
 .move-left{
-    animation: moveBox 25s forwards linear, rotate 15s infinite linear;
+    animation: moveBox 30s forwards linear, rotate 15s infinite linear;
 }
 .move-right{
-    animation: moveBox 25s forwards linear reverse, rotate 15s infinite linear reverse;
+    animation: moveBox 30s forwards linear reverse, rotate 15s infinite linear reverse;
 }
 @keyframes moveBox{
     from{
         transform: rotate(0deg);
-        left: -10vw;
+        left: -20vw;
     }
     to{
         transform: rotate(360deg);
-        left: 110vw;
+        left: 120vw;
     }
 }
 

@@ -45,6 +45,9 @@ function addBgBox(way, index){
         <BgBox way={way} size={size} color={color} posit={randomNum(80)+10}/>,
         elem[0]
     );
+    setTimeout(()=>{
+        elem.remove();
+    }, 31000);
 }
 
 addBgBox("right", randomNum(3)-1);
