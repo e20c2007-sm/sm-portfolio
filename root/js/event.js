@@ -1,10 +1,19 @@
-let screenHeight = window.innerHeight;
-const pageHeight = document.body.clientHeight;
-const wrapper =$("#site-wrapper");
 const div = "<div></div>";
+const screenHeight = window.innerHeight;
+const pageHeight = document.body.clientHeight;
+let wrapper;
+let windowsFocus = true;
 let scrollFlag = true;
 
 $(function(){
+    wrapper = $("#site-wrapper");
+
+    $(window).focus(()=>{
+        windowsFocus = true;
+    }).blur(()=>{
+        windowsFocus = false;
+    });
+
     $(document).on("mouseover", ".nav-item:not(.just-hover)", function(){
         let target = $(this).children(".nav-bg");
         $(this).addClass("just-hover");

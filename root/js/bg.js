@@ -53,6 +53,8 @@ function addBgBox(way, index){
 addBgBox("right", randomNum(3)-1);
 addBgBox("left", randomNum(3)-1);
 setInterval(()=>{
-    addBgBox("right", randomNum(3)-1);
-    addBgBox("left", randomNum(3)-1);
+    if(windowsFocus){
+        addBgBox("right", randomNum(3)-1);
+        addBgBox("left", randomNum(3)-1);
+    }
 }, 5000);

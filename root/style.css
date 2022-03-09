@@ -1,6 +1,7 @@
 :root{
     --base-color: #3D3D45;
     --font-white: #dddddd;
+    --base-color2: #fffd96;
 }
 
 @font-face{
@@ -24,6 +25,11 @@ ul, li{
 body{
     margin: 0;
     overflow-x: hidden;
+}
+
+b{
+    padding-bottom: 0.5rem;
+    border-bottom: 0.3rem solid var(--base-color2);
 }
 
 .flex-row{
@@ -78,7 +84,7 @@ main{
 #page-thumb{
     width: 100vw;
     height: 100vh;
-    /* background-color: red; */
+    background: #ffffff2d;
 }
 #page-thumb *{
     pointer-events: none;
@@ -87,9 +93,9 @@ main{
 #main-contents{
     width: 100vw;
     height: 130vh;
-    margin-top: 15vh;
-    padding: 1rem 0;
-    background: linear-gradient(#ffffff00 0%, #ffffff7e 5%, #ffffff7e 100%);
+    /* margin-top: 10vh; */
+    padding-top: 10vh;
+    background: linear-gradient(#ffffff2d 0%, #ffffff7e 5%, #ffffff7e 100%);
 }
 
 /* ヘッダー */
@@ -278,7 +284,7 @@ footer{
 #site-bg{
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(#fffd96 35%, #fffec1 65%, #fffd96 100%);
+    background: linear-gradient( var(--base-color2) 35%, #fffec1 65%, var(--base-color2) 100%);
     position: fixed;
     top: 0;
     left: 0;
@@ -338,7 +344,7 @@ footer{
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 390px) {
     #ft-detail{
         flex-direction: column;
         justify-content: center;
