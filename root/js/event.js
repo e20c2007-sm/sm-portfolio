@@ -1,12 +1,29 @@
 const div = "<div></div>";
-const screenHeight = window.innerHeight;
 const pageHeight = document.body.clientHeight;
 let wrapper;
 let windowsFocus = true;
 let scrollFlag = true;
 
+let contentsView = {
+    "prof":  true,
+    "skill":  true,
+    "achive":  true,
+    "detail":  true,
+}
+
+function returnValJson(title, num, list){
+    return {"title": title, "num": num, "list": list};
+}
+let contentsVal = {
+    "prof": returnValJson("PROFILE", null, ["情報系の専門学生", "20歳寿司打1万円以上お得", "漢字検定準1級不合格"]),
+    "skill": returnValJson("SKILL", null, ""),
+    "achive": returnValJson("ACHIEVEMENT", null, ""),
+    "detail": returnValJson("DETAIL", null, "")
+}
+
 $(function(){
     wrapper = $("#site-wrapper");
+    getCsv("./data/prof.csv")
 
     $(window).focus(()=>{
         windowsFocus = true;
@@ -14,17 +31,37 @@ $(function(){
         windowsFocus = false;
     });
 
+    $(document).on("click", ".nav-item", function(){
+        let value = $(this).attr("data-value");
+        $('html, body').animate({scrollTop: contentsHeight[value]});
+    });
+
+    $(document).on("click", "#scroll-to-main", ()=>{
+        let main = $("#main-contents").offset().top;
+        $('html, body').animate({scrollTop: main});
+    });
+
     $(document).on("mouseover", ".nav-item:not(.just-hover)", function(){
-        let target = $(this).children(".nav-bg");
+        let targetBg = $(this).children(".nav-bg");
+        let targetSub = $(this).children(".nav-subtitle");
         $(this).addClass("just-hover");
-        target.animate({
+        targetBg.animate({
+            "width": "8rem",
+            "padding": "0 1.5rem"
+        }, 300);
+        targetSub.animate({
             "width": "8rem",
             "padding": "0 1.5rem"
         }, 300);
     }).on("mouseout", ".just-hover", function(){
         let $this = $(this);
-        let target = $(this).children(".nav-bg");
-        target.animate({
+        let targetSub = $(this).children(".nav-subtitle");
+        targetSub.animate({
+            "width": "0",
+            "padding": "0"
+        }, 100, "linear");
+        let targetBg = $(this).children(".nav-bg");
+        targetBg.animate({
             "width": "0",
             "padding": "0"
         }, 100, "linear", function(){
@@ -33,9 +70,8 @@ $(function(){
     });
 
     $(document).on("click", "#arrow-container", () => {
-        let margin = window.innerHeight * 0.14;
         let main = $("#main-contents").offset().top;
-        $('html, body').animate({scrollTop: main - margin});
+        $('html, body').animate({scrollTop: main});
     });
 
     $(window).scroll(() => {
@@ -63,6 +99,31 @@ $(function(){
                 $(".fixed-rb").remove();
             }, 200)
         }
+
+        let padding = screenHeight * 0.4;
+        let ary = [
+            "prof",
+            "skill",
+            "achive",
+            "detail"
+        ];
+        ary.forEach(e => {
+            if(contentsHeight[e]-padding <= st){
+                if(contentsView[e]){
+                    let value = contentsVal[e];
+                    ReactDOM.render(
+                        <Container
+                            opt={e}
+                            title={value.title}
+                            num={value.num}
+                            list={value.list}
+                        />,
+                        $(`#${e}-container`)[0]
+                    );
+                    contentsView[e] = false;
+                }
+            }
+        });
     });
     
     $(document).on("animationend", ".fixed-rb-in", function(){

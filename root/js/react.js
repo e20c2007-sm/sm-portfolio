@@ -44,24 +44,15 @@ class Container extends React.Component{
                 return(
                     <div class="info-container">
                         <h1 class="info-title">{this.props.title}</h1>
-                        <Profile num={this.props.num} list={this.props.list}/>
+                        <Profile list={this.props.list}/>
                     </div>
                 );
+                
+                
+            case "null":
+                return(
+                    <h2>これはテストです！</h2>
+                )
         }
     };
 }
-
-let ary = [
-    "dummy1",
-    "dummy2",
-    "dummy3"
-]
-// ReactDOM.render(
-//     <Container
-//         opt="prof"
-//         title="プロフィール"
-//         num={5}
-//         list={ary}
-//     />,
-//     $("body")[0]
-// )

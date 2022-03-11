@@ -7,14 +7,15 @@
     <link rel="preload" href="./font/aoyagireisyosimo_ttf_2_01.ttf" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="./js/functions.js"></script>
-    
+
     <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="./js/react.js" type="text/babel"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./js/event.js" type="text/babel"></script>
     <script src="./js/bg.js" type="text/babel"></script>
     <script src="./js/main.js" type="text/babel"></script>
@@ -25,20 +26,24 @@
             <h1 id="page-title">澤田政嘉</h1>
             <nav>
                 <div id="nav-container" class="flex-row">
-                    <div class="nav-item able-elem">
-                        <div class="nav-title">タイトル1</div>
+                    <div class="nav-item able-elem" data-value="prof">
+                        <div class="nav-title">概要</div>
+                        <div class="nav-subtitle">Profile</div>
                         <div class="nav-bg"></div>
                     </div>
-                    <div class="nav-item able-elem">
-                        <div class="nav-title">タイトル2</div>
+                    <div class="nav-item able-elem" data-value="skill">
+                        <div class="nav-title">技能</div>
+                        <div class="nav-subtitle">Skill</div>
                         <div class="nav-bg"></div>
                     </div>
-                    <div class="nav-item able-elem">
-                        <div class="nav-title">タイトル3</div>
+                    <div class="nav-item able-elem" data-value="achive">
+                        <div class="nav-title">制作</div>
+                        <div class="nav-subtitle">Achievement</div>
                         <div class="nav-bg"></div>
                     </div>
-                    <div class="nav-item able-elem">
-                        <div class="nav-title">タイトル4</div>
+                    <div class="nav-item able-elem" data-value="detail">
+                        <div class="nav-title">詳細</div>
+                        <div class="nav-subtitle">Detail</div>
                         <div class="nav-bg"></div>
                     </div>
                 </div>
@@ -50,7 +55,10 @@
         <main>
             <div id="page-thumb"></div>
             <div id="main-contents">
-                
+                <div id="prof-container" class="content"></div>
+                <div id="skill-container" class="content"></div>
+                <div id="achive-container" class="content"></div>
+                <div id="detail-container" class="content"></div>
             </div>
         </main>
 
