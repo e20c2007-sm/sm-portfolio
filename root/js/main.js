@@ -15,13 +15,12 @@ const contentsHeight = {
 
 let screen;
 if(screenWidth > 768){
-    // screen = "pc";
-    screen = "sp";
+    screen = "pc";
 }else{
     screen = "sp";
 }
 
-$("#page-thumb").load(`./ver/${screen}/`);
+$("#page-thumb").load(`./ver/sp/`);
 
 $(function(){
 

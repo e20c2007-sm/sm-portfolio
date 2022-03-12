@@ -15,7 +15,7 @@ function returnValJson(title, num, list){
     return {"title": title, "num": num, "list": list};
 }
 let contentsVal = {
-    "prof": returnValJson("PROFILE", null, ["情報系の専門学生", "20歳寿司打1万円以上お得", "漢字検定準1級不合格"]),
+    "prof": returnValJson("PROFILE", null, ["情報系の専門学生(20)", "寿司打1万円以上お得", "漢字検定準1級不合格"]),
     "skill": returnValJson("SKILL", null, ""),
     "achive": returnValJson("ACHIEVEMENT", null, ""),
     "detail": returnValJson("DETAIL", null, "")
@@ -24,6 +24,11 @@ let contentsVal = {
 $(function(){
     wrapper = $("#site-wrapper");
     getCsv("./data/prof.csv")
+
+    let closeMenu = function(){
+        $("#ham-menu").text("").text("三").removeClass("opened");
+        $("#nav-container").animate({"height": "0", "opacity": 0}, 300, "linear")
+    }
 
     $(window).focus(()=>{
         windowsFocus = true;
@@ -34,6 +39,10 @@ $(function(){
     $(document).on("click", ".nav-item", function(){
         let value = $(this).attr("data-value");
         $('html, body').animate({scrollTop: contentsHeight[value]});
+
+        if(screen == "sp"){
+            closeMenu();
+        }
     });
 
     $(document).on("click", "#scroll-to-main", ()=>{
@@ -67,6 +76,13 @@ $(function(){
         }, 100, "linear", function(){
             $this.removeClass("just-hover");
         });
+    });
+
+    $(document).on("click", "#ham-menu", function(){
+        $(this).text("").text("×").addClass("opened");
+        $("#nav-container").animate({"height": "10vh", "opacity": 1}, 300, "linear")
+    }).on("click", "#ham-menu.opened", function(){
+        closeMenu();
     });
 
     $(document).on("click", "#arrow-container", () => {

@@ -2,11 +2,16 @@
     --base-color: #3D3D45;
     --font-white: #dddddd;
     --base-color2: #fffd96;
+    --base-color3: #ffc04c;
 }
 
 @font-face{
     font-family: kanji;
     src: url(./font/aoyagireisyosimo_ttf_2_01.ttf);
+}
+@font-face {
+    font-family: writed;
+    src: url(./font/gomarice_mukasi_mukasi.ttf);
 }
 
 html{
@@ -95,14 +100,111 @@ main{
 }
 
 .content{
-    margin-bottom: 20rem;
+    padding-bottom: 20rem;
     width: 100vw;
     min-height: 70rem;
-    background: red;
+    padding-top: 10vh;
+    /* background: red; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .content:last-child{
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 }
+
+.info-container{
+    width: 85vw;
+    max-width: 130rem;
+    min-height: 65rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.info-title{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10vw;
+    width: 80vw;
+    padding: 0 2.5vw;
+    color: var(--base-color3);
+    border-bottom: #ffd78c 0.5rem solid;
+    user-select: none;
+}
+
+#prof-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+#prof-about-me{
+    /* background-color: red; */
+    width: 35vw;
+    max-width: 530px;
+    height: auto;
+    padding: 3rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#prof-me{
+    width: 25vw;
+    max-width: 380px;
+    padding: 0 5vw;
+}
+#prof-myname{
+    padding: 1.5rem 0;
+    font-size: 4.5vw;
+    font-family: "游ゴシック", "游ゴシック体";
+    color: var(--base-color);
+    font-weight: 900;
+}
+#prof-list{
+    margin: 3rem 2.5vw;
+    width: 45vw;
+    max-width: 670px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.prof-li{
+    padding: 1rem 0 1rem 10rem;
+    width: 40vw;
+    max-width: 650px;
+    height: 8rem;
+    border-radius: 5rem;
+    font-size: 2.8vw;
+    line-height: 8rem;
+    background: #ffe656;
+    color: #000000c5;
+    font-family: writed;
+    position: relative;
+}
+.prof-li:not(:first-child){
+    margin-top: 5vw;
+}
+.prof-li::after{
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    background: #ffffff;
+    left: 4rem;
+    border-radius: 2rem;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+}
+
 
 /* ヘッダー */
 header{
@@ -113,6 +215,7 @@ header{
     top: -10vh;
     justify-content: space-between;
     transition: 300ms;
+    z-index: 20;
 }
 
 #page-title{
@@ -362,7 +465,17 @@ footer{
 
 @media screen and (max-width: 768px) {
     #nav-container{
-        display: none;
+        height: 0;
+        opacity: 0;
+        position: fixed;
+        top: 10vh;
+        left: 0;
+        width: 100vw;
+        background-color: #37373bde;
+        overflow: hidden;
+    }
+    .nav-item{
+        width: 25vw;
     }
     #ham-menu{
         display: block;
@@ -372,7 +485,7 @@ footer{
     }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 425px) {
     #ft-detail{
         flex-direction: column;
         justify-content: center;

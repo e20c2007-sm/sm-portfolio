@@ -19,7 +19,8 @@ class Profile extends React.Component{
         }
         return(
             <div id="prof-container">
-                <div id="prof-me">
+                <div id="prof-about-me">
+                    <img id="prof-me" src="./gallery/my-img.jpg" alt="澤田　政嘉" />
                     <div id="prof-myname">澤田&nbsp;政嘉</div>
                 </div>
                 <ul id="prof-list">
