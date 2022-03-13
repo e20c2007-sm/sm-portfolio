@@ -50,10 +50,29 @@ class Container extends React.Component{
                 );
                 
                 
-            case "null":
+            case "skill":
                 return(
-                    <h2>これはテストです！</h2>
-                )
+                    <div class="info-container">
+                        <h1 class="info-title">{this.props.title}</h1>
+                        {/* <Skill list={this.props.list}/> */}
+                    </div>
+                );
+
+            case "work":
+                return(
+                    <div class="info-container">
+                        <h1 class="info-title">{this.props.title}</h1>
+                        {/* <Work list={this.props.list}/> */}
+                    </div>
+                );
+
+            case "detail":
+                return(
+                    <div class="info-container">
+                        <h1 class="info-title">{this.props.title}</h1>
+                        {/* <Detail list={this.props.list}/> */}
+                    </div>
+                );
         }
     };
 }

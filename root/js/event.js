@@ -7,7 +7,7 @@ let scrollFlag = true;
 let contentsView = {
     "prof":  true,
     "skill":  true,
-    "achive":  true,
+    "work":  true,
     "detail":  true,
 }
 
@@ -17,7 +17,7 @@ function returnValJson(title, num, list){
 let contentsVal = {
     "prof": returnValJson("PROFILE", null, ["情報系の専門学生(20)", "寿司打1万円以上お得", "漢字検定準1級不合格"]),
     "skill": returnValJson("SKILL", null, ""),
-    "achive": returnValJson("ACHIEVEMENT", null, ""),
+    "work": returnValJson("WORK", null, ""),
     "detail": returnValJson("DETAIL", null, "")
 }
 
@@ -55,11 +55,11 @@ $(function(){
         let targetSub = $(this).children(".nav-subtitle");
         $(this).addClass("just-hover");
         targetBg.animate({
-            "width": "8rem",
+            "width": "25vw",
             "padding": "0 1.5rem"
         }, 300);
         targetSub.animate({
-            "width": "8rem",
+            "width": "25vw",
             "padding": "0 1.5rem"
         }, 300);
     }).on("mouseout", ".just-hover", function(){
@@ -95,7 +95,7 @@ $(function(){
         let st = $(window).scrollTop();
         if(st >= wh){
             $("header").css("top", "0");
-        }else{
+        }else if(!($("#ham-menu").hasClass("opened"))){
             $("header").css("top", "-10vh")
         }
 
@@ -120,7 +120,7 @@ $(function(){
         let ary = [
             "prof",
             "skill",
-            "achive",
+            "work",
             "detail"
         ];
         ary.forEach(e => {
