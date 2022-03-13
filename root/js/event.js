@@ -1,4 +1,6 @@
 const div = "<div></div>";
+let size;
+let num = 0;
 const pageHeight = document.body.clientHeight;
 let wrapper;
 let windowsFocus = true;
@@ -9,6 +11,19 @@ let contentsView = {
     "skill":  true,
     "work":  true,
     "detail":  true,
+}
+
+function addClassCombo(target, cn){
+    if(num < size){
+        target.eq(num).addClass(cn);
+        num++;
+        setTimeout(()=>{
+            addClassCombo(target, cn);
+        }, 500);
+    }else{
+        num = 0;
+        size = 0;
+    }
 }
 
 function returnValJson(title, num, list){
@@ -144,5 +159,8 @@ $(function(){
     
     $(document).on("animationend", ".fixed-rb-in", function(){
         $(this).removeClass("fixed-rb-in");
+    }).on("animationend", "#prof-me", ()=>{
+        size = $(".prof-li").length;
+        addClassCombo($(".prof-li"), "slide-in");
     });
 });

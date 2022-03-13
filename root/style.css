@@ -181,6 +181,7 @@ main{
 }
 
 .prof-li{
+    opacity: 0;
     padding: 1rem 0 1rem 10rem;
     width: 40vw;
     max-width: 650px;
