@@ -47,7 +47,7 @@
 
 .info-title{
     overflow: hidden;
-    animation: showWidth 1s linear;
+    animation: showWidth 1s ease-out;
 }
 
 #prof-me{

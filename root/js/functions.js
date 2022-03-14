@@ -3,16 +3,30 @@ function randomNum(num){
     return returnNum;
 }
 
-function getCsv(src){
-    let data;
+function getCsv(src, key, opt){
+    let ary;
     let req = new XMLHttpRequest();
 
     req.open("get", src, true);
     req.send(null);
 
     req.onload = function(){
-        data = csvToArray(req.responseText);
-        return data;
+        ary = csvToArray(req.responseText);
+        if(opt == "json"){
+            let jsonAry = [];
+            for(let i=1; i < ary.length; i++){
+                let split = ary[i].split(",");
+                let json = {
+                    "lang": split[0],
+                    "used": split[1]
+                }
+                jsonAry.push(json);
+            }
+            myData[key] = jsonAry;
+        }else{
+            myData[key] = ary;
+        }
+        console.log(myData[key]);
     }
     
 }

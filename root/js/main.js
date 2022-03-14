@@ -1,5 +1,8 @@
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
+let myData = {
+    "skills": ""
+}
 
 let prof = $("#prof-container").offset().top;
 let skill = $("#skill-container").offset().top;
@@ -20,8 +23,8 @@ if(screenWidth > 768){
     screen = "sp";
 }
 
-$("#page-thumb").load(`./ver/sp/`);
+getCsv("./data/skill.csv", "skills", "json");
 
 $(function(){
-
+    $("#page-thumb").load(`./ver/sp/`);
 });
