@@ -13,13 +13,13 @@ let contentsView = {
     "detail":  true,
 }
 
-function addClassCombo(target, cn){
+function addClassCombo(target, cn, delay){
     if(num < size){
         target.eq(num).addClass(cn);
         num++;
         setTimeout(()=>{
-            addClassCombo(target, cn);
-        }, 500);
+            addClassCombo(target, cn, delay);
+        }, delay);
     }else{
         num = 0;
         size = 0;
@@ -29,16 +29,17 @@ function addClassCombo(target, cn){
 function returnValJson(title, num, list){
     return {"title": title, "num": num, "list": list};
 }
-let contentsVal = {
-    "prof": returnValJson("PROFILE", null, ["情報系の専門学生(20)", "寿司打1万円以上お得", "漢字検定準1級不合格"]),
-    "skill": returnValJson("SKILL", null, ""),
-    "work": returnValJson("WORK", null, ""),
-    "detail": returnValJson("DETAIL", null, "")
-}
+let contentsVal;
 
 $(function(){
+    contentsVal = {
+        // title, num, list
+        "prof": returnValJson("PROFILE", null, ["情報系の専門学生(20)", "寿司打1万円以上お得", "漢字検定準1級不合格"]),
+        "skill": returnValJson("SKILL", null, myData.skills),
+        "work": returnValJson("WORK", null, ""),
+        "detail": returnValJson("DETAIL", null, "")
+    }
     wrapper = $("#site-wrapper");
-    getCsv("./data/prof.csv")
 
     let closeMenu = function(){
         $("#ham-menu").text("").text("三").removeClass("opened");
@@ -149,7 +150,11 @@ $(function(){
                             num={value.num}
                             list={value.list}
                         />,
-                        $(`#${e}-container`)[0]
+                        $(`#${e}-container`)[0],
+                        function(){
+                            resetOffset();
+                            resetHeight();
+                        }
                     );
                     contentsView[e] = false;
                 }
@@ -161,6 +166,11 @@ $(function(){
         $(this).removeClass("fixed-rb-in");
     }).on("animationend", "#prof-me", ()=>{
         size = $(".prof-li").length;
-        addClassCombo($(".prof-li"), "slide-in");
+        addClassCombo($(".prof-li"), "slide-in", 500);
+    }).on("animationend", ".skill-cloud", ()=>{
+        size = $(".lang-logo").length;
+        addClassCombo($(".lang-logo"), "flip-in", 1000);
+    }).on("animationend", ".lang-logo", function(){
+        $(this).next().addClass("fade-in");
     });
 });

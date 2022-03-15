@@ -41,8 +41,26 @@
         opacity: 1;
     }
 }
+
+@keyframes flipIn{
+    0%{
+        transform: rotateX(90deg);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.fade-in{
+    animation: fadeIn 500ms linear forwards;
+}
+
 .slide-in{
     animation: slideIn 1s ease-in forwards;
+}
+
+.flip-in{
+    animation: flipIn 500ms linear forwards;
 }
 
 .info-title{
@@ -58,3 +76,8 @@
     opacity: 0;
     animation: fadeIn 1500ms linear 1500ms forwards;
 }
+
+.skill-title, .skill-cloud{
+    animation: fadeIn 200ms linear forwards;
+}
+

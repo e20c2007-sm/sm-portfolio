@@ -98,17 +98,14 @@ main{
 
 #main-contents{
     width: 100vw;
-    /* margin-top: 10vh; */
     padding-top: 10vh;
     background: linear-gradient(#ffffff2d 0%, #ffffff7e 5%, #ffffff7e 100%);
 }
 
 .content{
-    width: 100vw;
+    width: 85vw;
     min-height: 70rem;
-    padding-top: 10vh;
-    padding-bottom: 5rem;
-    /* background: red; */
+    padding: 10vh 7.5vw 15vw 7.5vw;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -130,6 +127,10 @@ main{
     align-items: flex-start;
     overflow: hidden;
 }
+.info-container *{
+    box-sizing: border-box;
+    max-width: 130rem;
+}
 
 .info-title{
     font-family: 'Times New Roman', Times, serif;
@@ -139,9 +140,12 @@ main{
     color: var(--base-color3);
     border-bottom: #ffd78c 0.5rem solid;
     user-select: none;
+    box-sizing: content-box;
 }
 
+/* プロフィール */
 #prof-container{
+    width: 85vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -149,7 +153,6 @@ main{
 }
 #prof-about-me{
     width: 35vw;
-    max-width: 530px;
     height: auto;
     padding: 3rem 0;
     position: relative;
@@ -161,7 +164,6 @@ main{
 #prof-me{
     width: 25vw;
     max-width: 380px;
-    padding: 0 5vw;
 }
 #prof-myname{
     padding: 1.5rem 0;
@@ -193,6 +195,7 @@ main{
     color: #000000c5;
     font-family: writed;
     position: relative;
+    box-sizing: content-box;
 }
 .prof-li:not(:first-child){
     margin-top: 5vw;
@@ -209,6 +212,60 @@ main{
     position: absolute;
 }
 
+/* スキル */
+#skill-container{
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.skill-title{
+    padding: 0 1vw;
+    width: 80vw;
+    height: 8vw;
+    font-size: 4vw;
+    line-height: 8vw;
+    color: var(--base-color);
+    margin: 8rem 0;
+    border-left: solid 2vw #ffa837c2;
+}
+.skill-cloud{
+    width: 80vw;
+    padding: 0 2.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #ffffff83;
+    border-radius: 5vw;
+    max-width: 130rem;
+}
+.skill-item{
+    height: 17vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 3rem;
+    box-sizing: content-box;
+    transition: 300ms;
+}
+.lang-logo{
+    height: 13vh;
+    width: auto;
+    transform: rotateX(90deg);
+}
+.lang-title{
+    height: 5vh;
+    padding-top: 2vh;
+    font-size: 2.5vh;
+    line-height: 5vh;
+    text-align: center;
+    color: var(--base-color);
+    opacity: 0;
+}
 
 /* ヘッダー */
 header{
@@ -540,6 +597,21 @@ footer{
     }
     .prof-li::after{
         display: none;
+    }
+
+    .skill-title{
+        margin: 3rem 0;
+    }
+    .skill-cloud{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        background: #ffffffca;
+        border-radius: 5vw;
+        padding: 0 2.5vw;
+        max-width: 80vw;
     }
 }
 

@@ -1,19 +1,28 @@
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
+
 let myData = {
     "skills": ""
 }
 
-let prof = $("#prof-container").offset().top;
-let skill = $("#skill-container").offset().top;
-let work = $("#work-container").offset().top;
-let detail = $("#detail-container").offset().top;
-
-const contentsHeight = {
-    "prof":  prof - (screenHeight * 0.05),
-    "skill":  skill - (screenHeight * 0.05),
-    "work":  work - (screenHeight * 0.05),
-    "detail":  detail - (screenHeight * 0.05),
+let prof;
+let skill;
+let work;
+let detail;
+function resetOffset(){
+    prof = $("#prof-container").offset().top;
+    skill = $("#skill-container").offset().top;
+    work = $("#work-container").offset().top;
+    detail = $("#detail-container").offset().top;
+}
+let contentsHeight;
+function resetHeight(){
+    contentsHeight = {
+        "prof":  prof - (screenHeight * 0.03),
+        "skill":  skill - (screenHeight * 0.03),
+        "work":  work - (screenHeight * 0.03),
+        "detail":  detail - (screenHeight * 0.03),
+    }
 }
 
 let screen;
@@ -26,5 +35,7 @@ if(screenWidth > 768){
 getCsv("./data/skill.csv", "skills", "json");
 
 $(function(){
+    resetOffset();
+    resetHeight();
     $("#page-thumb").load(`./ver/sp/`);
 });

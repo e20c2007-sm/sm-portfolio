@@ -26,7 +26,6 @@ function getCsv(src, key, opt){
         }else{
             myData[key] = ary;
         }
-        console.log(myData[key]);
     }
     
 }
@@ -34,4 +33,14 @@ function getCsv(src, key, opt){
 function csvToArray(data){
     let array = data.split("\n");
     return array;
+}
+
+function preloadImgs(src, imgs){
+    if(src && !(imgs)){
+        $(`<img src="${src}" />`);
+    }else if(imgs){
+        imgs.forEach(e => {
+            $(`<img src="${e}" />`);
+        });
+    }
 }

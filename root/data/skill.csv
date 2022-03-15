@@ -1,12 +1,15 @@
 lang,used
 HTML,true
 CSS,true
+JavaScript,true
 PHP,false
 Java,false
 Node.js,false
-JavaScript,true
 jQuery,true
 React,true
 Express,false
 Socket.io,false
 R,false
+MySQL,false
+MongoDB,false
+XML,false

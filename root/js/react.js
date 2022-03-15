@@ -21,13 +21,39 @@ class Profile extends React.Component{
             <div id="prof-container">
                 <div id="prof-about-me">
                     <img id="prof-me" src="./gallery/my-img.jpg" alt="澤田　政嘉" />
-                    <div id="prof-myname">澤田&nbsp;政嘉</div>
+                    <div id="prof-myname"><strong>澤田&nbsp;政嘉</strong></div>
                 </div>
                 <ul id="prof-list">
                     {ary}
                 </ul>
             </div>
         );
+    }
+}
+
+class Skill extends React.Component{
+    render(){
+        let ary = [];
+        for(let i in this.props.list){
+            let items = this.props.list[i];
+            let lang = items.lang;
+            let used = items.used;
+            ary.push(
+                <div class="skill-item">
+                    <img class="lang-logo" src={`./gallery/icon/lang/${lang}.png`}></img>
+                    <div class={`lang-title ${used}`}>{lang}</div>
+                </div>
+            );
+        }
+
+        return(
+            <div id="skill-container">
+                <div class="skill-title">利用可能な言語・技術</div>
+                <div class="skill-cloud">
+                    {ary}
+                </div>
+            </div>
+        )
     }
 }
 
@@ -54,7 +80,7 @@ class Container extends React.Component{
                 return(
                     <div class="info-container">
                         <h1 class="info-title">{this.props.title}</h1>
-                        {/* <Skill list={this.props.list}/> */}
+                        <Skill list={this.props.list}/>
                     </div>
                 );
 
