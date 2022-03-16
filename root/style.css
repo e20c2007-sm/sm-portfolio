@@ -13,6 +13,10 @@
     font-family: writed;
     src: url(./font/gomarice_mukasi_mukasi.ttf);
 }
+@font-face{
+    font-family: base-font;
+    src: url(./font/Corporate-Logo-Rounded.ttf);
+}
 
 html{
     font-size: 10px;
@@ -33,7 +37,7 @@ body{
 }
 
 b{
-    padding-bottom: 0.5rem;
+    padding: 0 1rem 0.3rem 1rem;
     border-bottom: 0.3rem solid var(--base-color2);
 }
 
@@ -88,6 +92,7 @@ img{
 /* メイン */
 main{
     padding-bottom: 46rem;
+    font-family: base-font;
 }
 
 #page-thumb{
@@ -583,6 +588,7 @@ footer{
     height: 2rem;
     line-height: 2rem;
     font-size: 1.7rem;
+    font-family: sans-serif;
     padding: 0 2rem;
     color: #ff6a6a;
     text-align: center;

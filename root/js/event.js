@@ -155,7 +155,7 @@ $(function(){
             }, 200)
         }
 
-        let padding = screenHeight * 0.8;
+        let padding = screenWidth * 0.1;
         let ary = [
             "prof",
             "skill",
@@ -187,8 +187,10 @@ $(function(){
         size = $(".prof-li").length;
         addClassCombo($(".prof-li"), "slide-in", 500);
     }).on("animationend", ".skill-cloud", ()=>{
-        size = $(".lang-logo").length;
-        addClassCombo($(".lang-logo"), "flip-in", 1000);
+        setTimeout(()=>{
+            size = $(".lang-logo").length;
+            addClassCombo($(".lang-logo"), "flip-in", 1000);
+        }, 1000);
     }).on("animationend", ".lang-logo", function(){
         $(this).next().addClass("fade-in");
     });
