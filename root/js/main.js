@@ -1,9 +1,14 @@
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
-
 let myData = {
     "skills": ""
 }
+
+let screenWidth;
+let screenHeight;
+function screenResize(){
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
+}
+screenResize();
 
 let prof;
 let skill;
@@ -37,5 +42,11 @@ getCsv("./data/skill.csv", "skills", "json");
 $(function(){
     resetOffset();
     resetHeight();
+    setInterval(()=>{
+        screenResize();
+        resetOffset();
+        resetHeight();
+        console.log("ok")
+    }, 1000);
     $("#page-thumb").load(`./ver/sp/`);
 });

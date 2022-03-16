@@ -150,11 +150,7 @@ $(function(){
                             num={value.num}
                             list={value.list}
                         />,
-                        $(`#${e}-container`)[0],
-                        function(){
-                            resetOffset();
-                            resetHeight();
-                        }
+                        $(`#${e}-container`)[0]
                     );
                     contentsView[e] = false;
                 }
