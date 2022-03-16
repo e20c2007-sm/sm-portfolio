@@ -155,7 +155,7 @@ $(function(){
             }, 200)
         }
 
-        let padding = screenHeight * 0.4;
+        let padding = screenHeight * 0.8;
         let ary = [
             "prof",
             "skill",
