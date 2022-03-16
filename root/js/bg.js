@@ -22,11 +22,11 @@ let cont = $("#site-bg-container");
 
 const pattern = [
     {
-        size: "10vw",
+        size: "6vw",
         color: "#FABC61"
     },
     {
-        size: "6vw",
+        size: "4.5vw",
         color: "#FAE174"
     },
     {

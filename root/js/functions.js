@@ -25,6 +25,7 @@ function getCsv(src, key, opt){
             myData[key] = jsonAry;
         }else{
             myData[key] = ary;
+            console.log(myData[key])
         }
     }
     

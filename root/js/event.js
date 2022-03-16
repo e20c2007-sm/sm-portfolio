@@ -23,6 +23,12 @@ function addClassCombo(target, cn, delay){
     }else{
         num = 0;
         size = 0;
+        if(cn == "fade-in" || cn=="slide-in"){
+            target.css("opacity", 1);
+        }
+        if(target.hasClass("lang-logo")){
+            $(".skill-sort").addClass("fade-in");
+        }
     }
 }
 
@@ -35,7 +41,7 @@ $(function(){
     contentsVal = {
         // title, num, list
         "prof": returnValJson("PROFILE", null, ["情報系の専門学生(20)", "寿司打1万円以上お得", "漢字検定準1級不合格"]),
-        "skill": returnValJson("SKILL", null, myData.skills),
+        "skill": returnValJson("SKILL", null, [myData.skills, myData.tools]),
         "work": returnValJson("WORK", null, ""),
         "detail": returnValJson("DETAIL", null, "")
     }
@@ -92,6 +98,23 @@ $(function(){
         }, 100, "linear", function(){
             $this.removeClass("just-hover");
         });
+    });
+
+    $(document).on("mouseover", ".skill-sort", ()=>{
+        $(".none-check").removeClass().addClass("this-checked");
+    }).on("mouseout", ".skill-sort", function(){
+        if(!($(this).hasClass("checked"))){
+            $(".this-checked").removeClass().addClass("none-check");
+        }
+    }).on("click", ".skill-sort", function(){
+        if(!($(this).hasClass("checked"))){
+            $(this).addClass("checked");
+            $(".skill-cloud .false").fadeOut(300);
+        }
+    }).on("click", ".skill-sort.checked", function(){
+        $(this).removeClass("checked");
+        $(".this-checked").removeClass().addClass("none-check");
+        $(".skill-cloud .false").fadeIn(300);
     });
 
     $(document).on("click", "#ham-menu", function(){

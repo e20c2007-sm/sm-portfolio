@@ -33,27 +33,56 @@ class Profile extends React.Component{
 
 class Skill extends React.Component{
     render(){
-        let ary = [];
-        for(let i in this.props.list){
-            let items = this.props.list[i];
+        let langList = this.props.list[0];
+        let toolList = this.props.list[1];
+        let langs = [];
+        let tools = [];
+        for(let i in langList){
+            let items = langList[i];
             let lang = items.lang;
             let used = items.used;
-            ary.push(
-                <div class="skill-item">
+            langs.push(
+                <div class={`skill-item  ${used}`}>
                     <img class="lang-logo" src={`./gallery/icon/lang/${lang}.png`}></img>
-                    <div class={`lang-title ${used}`}>{lang}</div>
+                    <div class={`lang-title`}>{lang}</div>
+                </div>
+            );
+        }
+        for(let i in toolList){
+            tools.push(
+                <div class={`skill-item`}>
+                    <img class="lang-logo" src={`./gallery/icon/tool/${toolList[i]}.png`}></img>
+                    <div class={`lang-title`}>{toolList[i]}</div>
                 </div>
             );
         }
 
-        return(
-            <div id="skill-container">
-                <div class="skill-title">利用可能な言語・技術</div>
-                <div class="skill-cloud">
-                    {ary}
+        if(langs.length > 0){
+            return(
+                <div id="skill-container">
+                    <div class="skill-title">
+                        利用可能な言語・技術
+                        <div class="skill-sort able-elem"><div class="check-box"><div class="none-check"></div></div>このページで使用中</div>
+                    </div>
+                    <div class="skill-cloud">
+                        {langs}
+                    </div>
+
+                    <div class="skill-title">よく使うツール</div>
+                    <div class="skill-cloud">
+                        {tools}
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }else{
+            return(
+                <div id="skill-container">
+                    <div class="skill-cloud" style={{"margin-top": "3rem"}}>
+                        <div class="err-loading">読み込みに失敗しました。</div>
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

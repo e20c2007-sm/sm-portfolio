@@ -1,5 +1,16 @@
 let myData = {
-    "skills": ""
+    "skills": "",
+    "tools": [
+        "ZOOM",
+        "Slack",
+        "Microsoft Teams",
+        "Adobe Premiere Pro",
+        "Adobe Photoshop",
+        "Visual Studio Code",
+        "GIMP",
+        "GitHub",
+        "Docker"
+    ]
 }
 
 let screenWidth;
@@ -38,6 +49,7 @@ if(screenWidth > 768){
 }
 
 getCsv("./data/skill.csv", "skills", "json");
+// getCsv("./data/tool.csv", "tools", "");
 
 $(function(){
     resetOffset();
@@ -46,7 +58,6 @@ $(function(){
         screenResize();
         resetOffset();
         resetHeight();
-        console.log("ok")
     }, 1000);
     $("#page-thumb").load(`./ver/sp/`);
 });
