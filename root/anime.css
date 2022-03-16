@@ -51,6 +51,17 @@
     }
 }
 
+@keyframes lineView{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+.show-width{
+    animation: lineView 500ms linear forwards;
+}
 .fade-in{
     animation: fadeIn 500ms linear forwards;
 }

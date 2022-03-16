@@ -19,13 +19,33 @@ class Profile extends React.Component{
         }
         return(
             <div id="prof-container">
-                <div id="prof-about-me">
-                    <img id="prof-me" src="./gallery/my-img.jpg" alt="澤田　政嘉" />
-                    <div id="prof-myname"><strong>澤田&nbsp;政嘉</strong></div>
+                <div id="prof-inner">
+                    <div id="prof-about-me">
+                        <img id="prof-me" src="./gallery/my-img.jpg" alt="澤田　政嘉" />
+                        <div id="prof-myname"><strong>澤田&nbsp;政嘉</strong></div>
+                    </div>
+                    <ul id="prof-list">
+                        {ary}
+                    </ul>
                 </div>
-                <ul id="prof-list">
-                    {ary}
-                </ul>
+
+                <div id="prof-sentence">
+                    <div class="sentence-line">
+                        WEB制作・フロントエンドのコーディングやプログラミングが好き！
+                    </div>
+                    <div class="sentence-line">
+                        JavaScriptのDOM操作にドはまりし、
+                    </div>
+                    <div class="sentence-line">
+                        jQueryをはじめとしたJSのライブラリ・フレームワークなどを勉強中！
+                    </div>
+                    <div class="sentence-line">
+                        将来的にはWEB制作のスキルを高めて、
+                    </div>
+                    <div class="sentence-line">
+                        自身が運営するWEBサービスでも立ち上げようかと考えているよ！
+                    </div>
+                </div>
             </div>
         );
     }
@@ -86,6 +106,17 @@ class Skill extends React.Component{
     }
 }
 
+class Work extends React.Component{
+    render(){
+        return(
+            <div id="work-memo">
+                過去に制作した作品などを掲載しています。<br />
+                作品をクリックすることで詳細を見ることが可能です。
+            </div>
+        )
+    }
+}
+
 class Container extends React.Component{
     /*
         .opt = コンテナの中身を指定
@@ -117,7 +148,7 @@ class Container extends React.Component{
                 return(
                     <div class="info-container">
                         <h1 class="info-title">{this.props.title}</h1>
-                        {/* <Work list={this.props.list}/> */}
+                        <Work list={this.props.list}/>
                     </div>
                 );
 

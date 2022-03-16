@@ -1,6 +1,5 @@
 const div = "<div></div>";
-let size;
-let num = 0;
+
 const pageHeight = document.body.clientHeight;
 let wrapper;
 let windowsFocus = true;
@@ -13,16 +12,14 @@ let contentsView = {
     "detail":  true,
 }
 
-function addClassCombo(target, cn, delay){
+function addClassCombo(target, cn, delay, num, size){
     if(num < size){
         target.eq(num).addClass(cn);
         num++;
         setTimeout(()=>{
-            addClassCombo(target, cn, delay);
+            addClassCombo(target, cn, delay, num, size);
         }, delay);
     }else{
-        num = 0;
-        size = 0;
         if(cn == "fade-in" || cn=="slide-in"){
             target.css("opacity", 1);
         }
@@ -184,13 +181,12 @@ $(function(){
     $(document).on("animationend", ".fixed-rb-in", function(){
         $(this).removeClass("fixed-rb-in");
     }).on("animationend", "#prof-me", ()=>{
-        size = $(".prof-li").length;
-        addClassCombo($(".prof-li"), "slide-in", 500);
+        addClassCombo($(".prof-li"), "slide-in", 500, 0, $(".prof-li").length);
+        addClassCombo($(".sentence-line"), "show-width", 1000, 0, $(".sentence-line").length);
     }).on("animationend", ".skill-cloud", ()=>{
         setTimeout(()=>{
-            size = $(".lang-logo").length;
-            addClassCombo($(".lang-logo"), "flip-in", 1000);
-        }, 1000);
+            addClassCombo($(".lang-logo"), "flip-in", 300, 0, $(".lang-logo").length);
+        }, 500);
     }).on("animationend", ".lang-logo", function(){
         $(this).next().addClass("fade-in");
     });

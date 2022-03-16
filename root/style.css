@@ -152,6 +152,14 @@ main{
 #prof-container{
     width: 85vw;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+#prof-inner{
+    width: 85vw;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
@@ -217,6 +225,36 @@ main{
     position: absolute;
 }
 
+#prof-sentence{
+    width: 85vw;
+    padding: 2.5vw 2.5vw;
+    font-size: 2vw;
+    background: #ffffff57;
+    border-radius: 2vw;
+    position: relative;
+}
+#prof-sentence::before{
+    content: "MEMO";
+    font-size: 1vw;
+    padding: 0.25vw 1vw;
+    color: var(--base-color3);
+    border: 0.2vw solid var(--base-color3);
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    background: var(--base-color2);
+}
+.sentence-line{
+    width: 0;
+    height: 4.5vw;
+    line-height: 2.5vw;
+    padding: 1.5vw 0;
+    color: var(--base-color);
+    border-bottom: 0.3vw solid #41414185;
+    overflow: hidden;
+    overflow-wrap: initial;
+}
+
 /* スキル */
 #skill-container{
     width: 85vw;
@@ -250,6 +288,7 @@ main{
     line-height: 3vw;
     padding: 0.5vw 1vw;
     border-radius: 0.5vw;
+    color: #575757;
     position: absolute;
     right: 1vw;
     bottom: -2vw;
@@ -262,7 +301,8 @@ main{
     opacity: 0;
     transition: 300ms;
 }
-.skill-sort:hover{
+.skill-sort:hover, .checked{
+    color: var(--base-color);
     background: #ffca67;
 }
 .check-box{
@@ -292,9 +332,7 @@ main{
     overflow: hidden;
     transition: 300ms;
 }
-.checked{
-    background: #ffca67;
-}
+
 .skill-cloud{
     width: 80vw;
     min-height: 15rem;
@@ -333,6 +371,15 @@ main{
     color: var(--base-color);
     opacity: 0;
 }
+
+/* ワーク */
+#work-memo{
+    font-size: 2.5vw;
+    width: 85vw;
+    text-align: center;
+    padding: 5vw 0;
+}
+
 
 /* ヘッダー */
 header{
@@ -650,6 +697,9 @@ footer{
         justify-content: center;
         align-items:center;
     }
+    #prof-inner{
+        flex-direction: column;
+    }
     #prof-about-me{
         width: 85vw;
         max-width: 80vw;
@@ -687,6 +737,9 @@ footer{
     }
     .prof-li::after{
         display: none;
+    }
+    #prof-sentence{
+        margin-top: 5vw;
     }
 
     .skill-title{
