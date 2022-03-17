@@ -1,16 +1,7 @@
 let myData = {
     "skills": "",
-    "tools": [
-        "ZOOM",
-        "Slack",
-        "Microsoft Teams",
-        "Adobe Premiere Pro",
-        "Adobe Photoshop",
-        "Visual Studio Code",
-        "GIMP",
-        "GitHub",
-        "Docker"
-    ]
+    "tools": "",
+    "works": ""
 }
 
 let screenWidth;
@@ -48,8 +39,14 @@ if(screenWidth > 768){
     screen = "sp";
 }
 
+function returnValJson(title, num, list){
+    return {"title": title, "num": num, "list": list}
+}
+let contentsVal;
+
 getCsv("./data/skill.csv", "skills", "json");
-// getCsv("./data/tool.csv", "tools", "");
+getCsv("./data/tool.csv", "tools", "");
+getCsv("./data/work.csv", "works", "json");
 
 $(function(){
     resetOffset();

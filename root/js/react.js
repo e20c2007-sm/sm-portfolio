@@ -54,6 +54,7 @@ class Profile extends React.Component{
 class Skill extends React.Component{
     render(){
         let langList = this.props.list[0];
+
         let toolList = this.props.list[1];
         let langs = [];
         let tools = [];
@@ -61,6 +62,7 @@ class Skill extends React.Component{
             let items = langList[i];
             let lang = items.lang;
             let used = items.used;
+
             langs.push(
                 <div class={`skill-item  ${used}`}>
                     <img class="lang-logo" src={`./gallery/icon/lang/${lang}.png`}></img>
@@ -108,10 +110,32 @@ class Skill extends React.Component{
 
 class Work extends React.Component{
     render(){
+        let ary = this.props.list;
+        let works = [];
+        for(let i in ary){
+            works.push(
+                <a href={ary[i].link} target="_blank">
+                    <li class="work-item">
+                        <img />
+                        <div class="works-item-content">
+                            <h3 class="works-item-title">{ary[i].name}<div class="comment">{ary[i].year}</div></h3>
+                            <div class="works-item-genre">{ary[i].genre}</div>
+                            <div class="works-item-guide">{ary[i].guide}</div>
+                        </div>
+                    </li>
+                </a>
+            );
+        }
         return(
-            <div id="work-memo">
-                過去に制作した作品などを掲載しています。<br />
-                作品をクリックすることで詳細を見ることが可能です。
+            <div id="work-container">
+                <div id="work-memo">
+                    <strong>過去に制作した作品などを掲載しています。<br /></strong>
+                    （一部他者と共同開発したものも含まれます。）
+                </div>
+
+                <ul id="work-list">
+                    {works}
+                </ul>
             </div>
         )
     }

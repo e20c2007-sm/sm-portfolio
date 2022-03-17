@@ -5,6 +5,7 @@ let wrapper;
 let windowsFocus = true;
 let scrollFlag = true;
 
+let cvCount = 0;
 let contentsView = {
     "prof":  true,
     "skill":  true,
@@ -29,19 +30,7 @@ function addClassCombo(target, cn, delay, num, size){
     }
 }
 
-function returnValJson(title, num, list){
-    return {"title": title, "num": num, "list": list};
-}
-let contentsVal;
-
 $(function(){
-    contentsVal = {
-        // title, num, list
-        "prof": returnValJson("PROFILE", null, ["情報系の専門学生(20)", "寿司打1万円以上お得", "漢字検定準1級不合格"]),
-        "skill": returnValJson("SKILL", null, [myData.skills, myData.tools]),
-        "work": returnValJson("WORK", null, ""),
-        "detail": returnValJson("DETAIL", null, "")
-    }
     wrapper = $("#site-wrapper");
 
     let closeMenu = function(){
@@ -160,7 +149,7 @@ $(function(){
             "detail"
         ];
         ary.forEach(e => {
-            if(contentsHeight[e]-padding <= st){
+            if(contentsHeight[e]-padding <= st && cvCount < 4){
                 if(contentsView[e]){
                     let value = contentsVal[e];
                     ReactDOM.render(
@@ -173,6 +162,7 @@ $(function(){
                         $(`#${e}-container`)[0]
                     );
                     contentsView[e] = false;
+                    cvCount++;
                 }
             }
         });

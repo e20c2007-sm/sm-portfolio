@@ -1,0 +1,3 @@
+name,link,genre,langs,guide,year
+居眠り教室,https://users2.kyoto-kcg.ac.jp/~st092022/inemuri_kyoshitsu/,ブラウザゲーム,HTML&CSS&JavaScript,自身で初めて制作したWEBゲーム。ajax通信で画面を非同期に切り替えるなど、初制作でありながら丁寧に作られている気がします。,2021
+遊戯WEB,https://users2.kyoto-kcg.ac.jp/~st092022/yu-gi-web/,ブラウザゲーム,HTML&CSS&JavaScript&PHP,学校の授業課題として共同開発したもの。ゲームのタイトル画面からメニュー画面、スコア画面、いくつかのミニゲームのプログラムおよびコーディングを担当しました。,2022
