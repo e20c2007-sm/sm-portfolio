@@ -135,7 +135,6 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    overflow: hidden;
 }
 .info-container *{
     box-sizing: border-box;
@@ -145,12 +144,11 @@ main{
 .info-title{
     font-family: 'Times New Roman', Times, serif;
     font-size: 10vw;
-    width: 80vw;
+    width: 100%;
     padding: 0 2.5vw;
     color: var(--base-color3);
     border-bottom: #ffd78c 0.5rem solid;
     user-select: none;
-    box-sizing: content-box;
 }
 
 /* プロフィール */
@@ -376,6 +374,8 @@ main{
     color: var(--base-color);
     opacity: 0;
 }
+
+/* ワーク */
 #work-container{
     width: 85vw;
     display: flex;
@@ -384,15 +384,111 @@ main{
     align-items: center;
 }
 
-/* ワーク */
 #work-memo{
     font-size: 2.5vw;
     width: 85vw;
     text-align: center;
+    padding-top: 4vw;
     padding-bottom: 5vw;
     animation: fadeIn 300ms linear;
 }
+#work-memo strong{
+    color: var(--base-color);
+}
 
+#work-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.work-item{
+    margin-bottom: 5vw;
+    width: 40%;
+    position: relative;
+    transform-origin: 50% 50%;
+    opacity: 0;
+}
+.wi-inner{
+    width: 100%;
+    border-radius: 3%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #fff6cd;
+    transform-origin: 50% 50%;
+    transition: 300ms;
+}
+.wi-inner:hover{
+    box-shadow: 0 0 0.2vw 0.2vw var(--base-color3);
+    transform: scale(1.05) translateY(-2vw);
+}
+.wi-thumb, .wi-content{
+    width: 100%;
+}
+
+.wi-name{
+    width: 70%;
+    text-align: center;
+    font-size: 2vw;
+    padding: 0 1vw;
+    padding-bottom: 0.3vw;
+    margin: 0 auto;
+    border-bottom: solid 0.2vw #41414146;
+    position: relative;
+    overflow-wrap: unset;
+}
+.wi-name .comment{
+    font-size: 0.3vw;
+    color: #41414146;
+    position: absolute;
+    left: 100%;
+    bottom: 0.2vw;
+}
+.wi-genre{
+    width: 100%;
+    padding: 0.25vw 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.wi-tag{
+    font-size: 1vw;
+    padding: 0.25vw 1vw;
+    border-radius: 0.2vw;
+    color: #ffffff;
+    background: var(--base-color3);
+    margin: 0.2vw 0.5vw;
+}
+.wi-guide{
+    margin: 2vw 0;
+    width: 85%;
+    padding: 2.5% 7.5%;
+    font-size: 1.5vw;
+    box-sizing: content-box;
+    position: relative;
+    color: #df993e;
+}
+
+#work-comment{
+    width: 100%;
+    color: var(--font-white);
+    font-size: 1vw;
+    margin-left: 2vw;
+    position: relative;
+}
+#work-comment::before{
+    content: "※";
+    color: var(--base-color3);
+    position: absolute;
+    top: 0;
+    right: 100%;
+}
 
 /* ヘッダー */
 header{
@@ -437,6 +533,7 @@ nav{
     padding: 0 1.5rem;
     font-family: kanji, 'Times New Roman';
     position: relative;
+    display: none;
 }
 .nav-title{
     width: 8.8rem;
@@ -812,5 +909,15 @@ footer{
         padding-top: 2vh;
         font-size: 1.8vh;
         line-height: 2vh;
+    }
+
+    .work-item{
+        width: 90%;
+    }
+    .wi-name{
+        font-size: 5vw;
+    }
+    .wi-name .comment{
+        font-size: 0.05vw;
     }
 }

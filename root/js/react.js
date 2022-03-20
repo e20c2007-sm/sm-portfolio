@@ -31,7 +31,7 @@ class Profile extends React.Component{
 
                 <div id="prof-sentence">
                     <div class="sentence-line">
-                        WEB制作・フロントエンドのコーディングやプログラミングが好き！
+                        WEB制作やフロントエンドのコーディング・プログラミングが好き！
                     </div>
                     <div class="sentence-line">
                         JavaScriptのDOM操作にドはまりし、
@@ -113,42 +113,50 @@ class Work extends React.Component{
         let ary = this.props.list;
         let works = [];
         for(let i in ary){
+            let tags = [];
+            let genre = ary[i].genre.split("&");
+            for(let j in genre){
+                tags.push(
+                    <div class="wi-tag">{genre[j]}</div>
+                );
+            }
             works.push(
-                <a href={ary[i].link} target="_blank">
-                    <li class="work-item">
-                        <img />
-                        <div class="works-item-content">
-                            <h3 class="works-item-title">{ary[i].name}<div class="comment">{ary[i].year}</div></h3>
-                            <div class="works-item-genre">{ary[i].genre}</div>
-                            <div class="works-item-guide">{ary[i].guide}</div>
+                <li class="work-item">
+                    <a class="work-link" href={ary[i].link} target="_blank">
+                        <div class="wi-inner">
+                            <img class="wi-thumb" src={`./gallery/thumb/${ary[i].name}.png`} alt={ary[i].name}/>
+                            <div class="wi-content">
+                                <h3 class="wi-title"><div class="wi-name">{ary[i].name}<div class="comment">&copy;{ary[i].year}</div></div></h3>
+                                <div class="wi-genre">{tags}</div>
+                                <div class="wi-guide">{ary[i].guide}</div>
+                            </div>
                         </div>
-                    </li>
-                </a>
+                    </a>
+                </li>
             );
         }
+
         return(
             <div id="work-container">
                 <div id="work-memo">
                     <strong>過去に制作した作品などを掲載しています。<br /></strong>
-                    （一部他者と共同開発したものも含まれます。）
+                    （一部、共同開発したものも含まれます。）
                 </div>
 
                 <ul id="work-list">
                     {works}
                 </ul>
+                
+                <div id="work-comment">
+                    一部学校の課題作品を掲載していますが、どれも設計・仕様考案まで開発者自ら行った作品です。<br/>
+                    内容に関する指示がない状態から作っているため、ここでは制作物として紹介しています。
+                </div>
             </div>
         )
     }
 }
 
 class Container extends React.Component{
-    /*
-        .opt = コンテナの中身を指定
-        .title = info-title要素に入れる文字
-        .num = 子要素に渡すボックスの数
-        .list = プロフィールに記載する各項目の配列
-    */
-
     render(){
         switch(this.props.opt){
             case "prof":

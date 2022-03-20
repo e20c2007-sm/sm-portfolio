@@ -51,6 +51,23 @@
     }
 }
 
+@keyframes floatIn{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    10%{
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-2vw);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes lineView{
     from{
         width: 0;
@@ -72,6 +89,10 @@
 
 .flip-in{
     animation: flipIn 500ms linear forwards;
+}
+
+.float-in{
+    animation: floatIn 1s linear forwards;
 }
 
 .info-title{

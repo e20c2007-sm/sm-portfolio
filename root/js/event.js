@@ -159,7 +159,10 @@ $(function(){
                             num={value.num}
                             list={value.list}
                         />,
-                        $(`#${e}-container`)[0]
+                        $(`#${e}-container`)[0],
+                        ()=>{
+                            $(`*[name=${e}]`).show();
+                        }
                     );
                     contentsView[e] = false;
                     cvCount++;
@@ -175,9 +178,11 @@ $(function(){
         addClassCombo($(".sentence-line"), "show-width", 1000, 0, $(".sentence-line").length);
     }).on("animationend", ".skill-cloud", ()=>{
         setTimeout(()=>{
-            addClassCombo($(".lang-logo"), "flip-in", 300, 0, $(".lang-logo").length);
+            addClassCombo($(".lang-logo"), "flip-in", 200, 0, $(".lang-logo").length);
         }, 500);
     }).on("animationend", ".lang-logo", function(){
         $(this).next().addClass("fade-in");
+    }).on("animationend", "#work-memo", ()=>{
+        addClassCombo($(".work-item"), "float-in", 300, 0, $(".work-item").length);
     });
 });
