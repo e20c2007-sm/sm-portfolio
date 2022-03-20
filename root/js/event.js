@@ -183,6 +183,6 @@ $(function(){
     }).on("animationend", ".lang-logo", function(){
         $(this).next().addClass("fade-in");
     }).on("animationend", "#work-memo", ()=>{
-        addClassCombo($(".work-item"), "float-in", 300, 0, $(".work-item").length);
+        addClassCombo($(".work-item"), "float-in", 1000, 0, $(".work-item").length);
     });
 });
