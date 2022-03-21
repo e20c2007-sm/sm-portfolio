@@ -1,7 +1,8 @@
 let myData = {
     "skills": "",
     "tools": "",
-    "works": ""
+    "works": "",
+    "details": ""
 }
 
 let screenWidth;
@@ -47,6 +48,7 @@ let contentsVal;
 getCsv("./data/skill.csv", "skills", "json");
 getCsv("./data/tool.csv", "tools", "");
 getCsv("./data/work.csv", "works", "json");
+getCsv("./data/detail.csv", "details", "json");
 
 $(function(){
     resetOffset();

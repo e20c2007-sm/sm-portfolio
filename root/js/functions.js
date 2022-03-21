@@ -33,7 +33,7 @@ function getCsv(src, key, opt){
             "prof": returnValJson("PROFILE", null, ["情報系の専門学生(20)", "寿司打1万円以上お得", "漢字検定準1級不合格"]),
             "skill": returnValJson("SKILL", null, [myData.skills, myData.tools]),
             "work": returnValJson("WORK", null, myData.works),
-            "detail": returnValJson("DETAIL", null, "")
+            "detail": returnValJson("DETAIL", null, myData.details)
         }
     }
     
