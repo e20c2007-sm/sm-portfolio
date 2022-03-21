@@ -5,6 +5,7 @@ let myData = {
     "details": ""
 }
 
+let pageHeight;
 let screenWidth;
 let screenHeight;
 function screenResize(){
@@ -31,6 +32,7 @@ function resetHeight(){
         "work":  work - (screenHeight * 0.03),
         "detail":  detail - (screenHeight * 0.03),
     }
+    pageHeight = document.body.clientHeight
 }
 
 let screen;

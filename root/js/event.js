@@ -1,6 +1,5 @@
 const div = "<div></div>";
 
-const pageHeight = document.body.clientHeight;
 let wrapper;
 let windowsFocus = true;
 let scrollFlag = true;
@@ -125,7 +124,7 @@ $(function(){
         }
 
         let bottom = pageHeight - wh - 460;
-        if(bottom <= st && scrollFlag){
+        if(bottom <= st && scrollFlag && cvCount >= 4){
             scrollFlag = false;
             let elem = $(div).addClass("fixed-rb fixed-rb-in");
             wrapper.append(elem);
