@@ -68,6 +68,24 @@
     }
 }
 
+@keyframes guideScroll{
+    0%{
+        left: 100vw;
+    }
+    10%{
+        left: 0;
+    }
+    60%{
+        left: 0;
+    }
+    70%{
+        left: -100vw;
+    }
+    100%{
+        left: -100vw;
+    }
+}
+
 @keyframes lineView{
     from{
         width: 0;

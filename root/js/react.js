@@ -166,11 +166,15 @@ function Detail(props){
     }
 
     return(
-        <div id="detail-container">
+        <div id="detail-container" class="fade-in">
             <ul id="detail-list">
                 {items}
             </ul>
-            より詳しい内容についてはメールなどでお問い合わせください。
+            <div id="detail-guide">
+                <div id="guide-scroll">
+                    より詳しい内容についてはメールなどでお問い合わせください。
+                </div>
+            </div>
         </div>
     );
 }

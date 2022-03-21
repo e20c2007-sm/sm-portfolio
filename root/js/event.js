@@ -165,6 +165,9 @@ $(function(){
                     );
                     contentsView[e] = false;
                     cvCount++;
+                    if(cvCount >= 4){
+                        $("footer").animate({"opacity": "1"}, 500, "linear");
+                    }
                 }
             }
         });
@@ -182,6 +185,12 @@ $(function(){
     }).on("animationend", ".lang-logo", function(){
         $(this).next().addClass("fade-in");
     }).on("animationend", "#work-memo", ()=>{
-        addClassCombo($(".work-item"), "float-in", 1000, 0, $(".work-item").length);
+        setTimeout(()=>{
+            addClassCombo($(".work-item"), "float-in", 1000, 0, $(".work-item").length);
+        }, 1000);
+    }).on("animationend", "#detail-container", ()=>{
+        setTimeout(()=>{
+            addClassCombo($(".detail-item"), "slide-in", 500, 0, $(".detail-item").length);
+        }, 500);
     });
 });

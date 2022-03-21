@@ -96,7 +96,6 @@ img{
 
 /* メイン */
 main{
-    padding-bottom: 46rem;
     font-family: base-font;
 }
 
@@ -109,6 +108,7 @@ main{
 #main-contents{
     width: 100vw;
     padding-top: 10vh;
+    padding-bottom: 46rem;
     background: linear-gradient(#ffffff2d 0%, #ffffff7e 5%, #ffffff7e 100%);
 }
 
@@ -123,13 +123,13 @@ main{
     align-items: center;
 }
 .content:last-child{
-    padding-bottom: 3rem;
+    padding-bottom: 0;
 }
 
 .info-container{
     width: 85vw;
     max-width: 130rem;
-    min-height: 65rem;
+    min-height: 30rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -231,7 +231,6 @@ main{
 #prof-sentence{
     width: 85vw;
     padding: 2.5vw 2.5vw;
-    font-size: 2vw;
     background: #ffffff57;
     border-radius: 2vw;
     position: relative;
@@ -249,9 +248,9 @@ main{
 }
 .sentence-line{
     width: 0;
-    height: 4.5vw;
-    line-height: 2.5vw;
-    padding: 1.5vw 0;
+    height: 6.5vw;
+    font-size: 2vw;
+    padding: 3vw 0 1.5vw 0;
     color: var(--base-color);
     border-bottom: 0.3vw solid #41414185;
     overflow: hidden;
@@ -433,7 +432,7 @@ main{
 .wi-name{
     width: 70%;
     text-align: center;
-    font-size: 2vw;
+    font-size: 2.5vw;
     padding: 0 1vw;
     padding-bottom: 0.3vw;
     margin: 0 auto;
@@ -498,6 +497,7 @@ main{
     justify-content: center;
     align-items: center;
     font-size: 2vw;
+    position: relative;
 }
 
 #detail-list{
@@ -513,6 +513,7 @@ main{
     justify-content: flex-start;
     align-items: center;
     font-size: 2vw;
+    opacity: 0;
 }
 .di-key{
     width: 15vw;
@@ -527,6 +528,45 @@ main{
     color: var(--base-color);
 }
 
+#detail-guide{
+    width: 100vw;
+    height: 5vw;
+    color: var(--base-color);
+    background: #ffd27fda;
+    max-width: none;
+    text-align: left;
+    padding: 1vw 0;
+    position: relative;
+    bottom: 0;
+}
+#detail-guide::before{
+    content: "";
+    width: 5vw;
+    height: 5vw;
+    background: url(./gallery/icon/guide-icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 7.5vw;
+    top: 0;
+    transform: translateX(-100%) translateY(-102%);
+}
+
+#guide-scroll{
+    width: 100vw;
+    max-width: none;
+    height: 5vw;
+    line-height: 5vw;
+    font-size: 3vw;
+    position: absolute;
+    top: 50%;
+    left: 100vw;
+    transform: translateY(-50%);
+    padding-left: 3vw;
+    overflow: visible;
+    animation: guideScroll 10s linear infinite;
+}
 
 /* ヘッダー */
 header{
@@ -639,6 +679,7 @@ footer{
     background-color: var(--base-color);
     position: absolute;
     bottom: 0;
+    opacity: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -916,6 +957,31 @@ footer{
         font-size: 2vh;
         line-height: 2.5vh;
     }
+
+    #work-memo{
+        font-size: 4vw;
+    }
+    .work-item{
+        width: 90%;
+    }
+    .wi-name{
+        font-size: 8vw;
+    }
+    .wi-name .comment{
+        font-size: 0.05vw;
+    }
+    .wi-tag{
+        font-size: 2vw;
+    }
+    .wi-guide{
+        margin: 2vw 0;
+        font-size: 3vw;
+    }
+
+    #guide-scroll{
+        left: 0;
+        animation: none;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -949,15 +1015,6 @@ footer{
         line-height: 2vh;
     }
 
-    .work-item{
-        width: 90%;
-    }
-    .wi-name{
-        font-size: 5vw;
-    }
-    .wi-name .comment{
-        font-size: 0.05vw;
-    }
 
     #detail-list{
         width: 85vw;
@@ -981,5 +1038,6 @@ footer{
         background: #ffa551;
         color: #ffffff;
         margin-right: 2vw;
+        margin-bottom: 0.5vw;
     }
 }

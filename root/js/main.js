@@ -1,3 +1,4 @@
+
 let myData = {
     "skills": "",
     "tools": "",
@@ -13,6 +14,12 @@ function screenResize(){
     screenHeight = window.innerHeight;
 }
 screenResize();
+let screen;
+if(screenWidth > 768){
+    screen = "pc";
+}else{
+    screen = "sp";
+}
 
 let prof;
 let skill;
@@ -25,21 +32,24 @@ function resetOffset(){
     detail = $("#detail-container").offset().top;
 }
 let contentsHeight;
+let multi;
+switch(screen){
+    case "pc":
+        multi = 0.05;
+        break;
+
+    case "sp":
+        multi = 0.5;
+        break;
+}
 function resetHeight(){
     contentsHeight = {
-        "prof":  prof - (screenHeight * 0.03),
-        "skill":  skill - (screenHeight * 0.03),
-        "work":  work - (screenHeight * 0.03),
-        "detail":  detail - (screenHeight * 0.03),
+        "prof":  prof - (screenHeight * multi),
+        "skill":  skill - (screenHeight * multi),
+        "work":  work - (screenHeight * multi),
+        "detail":  detail - (screenHeight * multi),
     }
     pageHeight = document.body.clientHeight
-}
-
-let screen;
-if(screenWidth > 768){
-    screen = "pc";
-}else{
-    screen = "sp";
 }
 
 function returnValJson(title, num, list){
