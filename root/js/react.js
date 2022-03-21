@@ -170,6 +170,7 @@ function Detail(props){
             <ul id="detail-list">
                 {items}
             </ul>
+            より詳しい内容についてはメールなどでお問い合わせください。
         </div>
     );
 }
