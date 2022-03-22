@@ -234,6 +234,7 @@ main{
     background: #ffffff57;
     border-radius: 2vw;
     position: relative;
+    white-space: nowrap;
 }
 #prof-sentence::before{
     content: "MEMO";
