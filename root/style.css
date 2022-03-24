@@ -356,6 +356,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 5rem 3rem;
     box-sizing: content-box;
     transition: 300ms;
@@ -477,7 +478,7 @@ main{
 #work-comment{
     width: 100%;
     color: var(--font-white);
-    font-size: 1.5rem;
+    font-size: 3rem;
     margin-left: 2vw;
     position: relative;
 }
@@ -502,7 +503,7 @@ main{
 
 #detail-list{
     width: 65vw;
-    padding: 5vw;
+    padding: 5vw 0 8vw 0;
 }
 
 .detail-item{
@@ -944,9 +945,11 @@ footer{
         border-radius: 5vw;
         padding: 0 2.5vw;
         max-width: 80vw;
+        min-height: 0;
     }
     .skill-item{
-        height: 8.5vh;
+        height: 12vh;
+        padding: 1rem 0.5rem;
     }
     .skill-sort:hover{
         color: #575757;
@@ -1023,6 +1026,9 @@ footer{
         line-height: 2vh;
     }
 
+    #work-comment{
+        font-size: 1rem;
+    }
 
     #detail-list{
         width: 85vw;
