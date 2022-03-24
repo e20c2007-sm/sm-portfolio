@@ -86,7 +86,9 @@ $(function(){
     });
 
     $(document).on("mouseover", ".skill-sort", ()=>{
-        $(".none-check").removeClass().addClass("this-checked");
+        if(screen == "pc"){
+            $(".none-check").removeClass().addClass("this-checked");
+        }
     }).on("mouseout", ".skill-sort", function(){
         if(!($(this).hasClass("checked"))){
             $(".this-checked").removeClass().addClass("none-check");
@@ -111,7 +113,7 @@ $(function(){
 
     $(document).on("click", "#arrow-container", () => {
         let main = $("#main-contents").offset().top;
-        $('html, body').animate({scrollTop: main});
+        $('html, body').animate({scrollTop: main}, 1000);
     });
 
     $(window).scroll(() => {

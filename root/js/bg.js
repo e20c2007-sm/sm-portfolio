@@ -31,7 +31,7 @@ const pattern = [
     },
     {
         size: "3vw",
-        color: "#FFFB58"
+        color: "#FFB928"
     }
 ];
 
