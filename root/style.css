@@ -423,7 +423,6 @@ main{
     transition: 300ms;
 }
 .wi-inner:hover{
-    box-shadow: 0 0 0.2vw 0.2vw var(--base-color3);
     transform: scale(1.05) translateY(-2vw);
 }
 .wi-thumb, .wi-content{
@@ -783,7 +782,7 @@ footer{
 #site-bg{
     width: 100vw;
     height: 100vh;
-    background: linear-gradient( var(--base-color2) 35%, #fffec1 65%, var(--base-color2) 100%);
+    background: var(--base-color2);
     position: fixed;
     top: 0;
     left: 0;
@@ -805,10 +804,10 @@ footer{
     }
 }
 .move-left{
-    animation: moveBox 30s forwards linear, rotate 15s infinite linear;
+    animation: moveBox 60s forwards linear, rotate 20s infinite linear;
 }
 .move-right{
-    animation: moveBox 30s forwards linear reverse, rotate 15s infinite linear reverse;
+    animation: moveBox 60s forwards linear reverse, rotate 20s infinite linear reverse;
 }
 @keyframes moveBox{
     from{
@@ -968,6 +967,9 @@ footer{
     }
     .work-item{
         width: 90%;
+    }
+    .wi-inner:hover{
+        transform: scale(1) translateY(0);
     }
     .wi-name{
         font-size: 8vw;

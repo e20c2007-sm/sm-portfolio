@@ -9,7 +9,7 @@ class BgBox extends React.Component{
             <div class={`bg-box move-${way}`} style={{
                 width: size,
                 height: size,
-                background: color,
+                border: `${color} solid 0.5vw`,
                 opacity: "0.5",
                 position: "absolute",
                 top: `${position}vh`
@@ -47,7 +47,7 @@ function addBgBox(way, index){
     );
     setTimeout(()=>{
         elem.remove();
-    }, 31000);
+    }, 61000);
 }
 
 addBgBox("right", randomNum(3)-1);
@@ -57,4 +57,4 @@ setInterval(()=>{
         addBgBox("right", randomNum(3)-1);
         addBgBox("left", randomNum(3)-1);
     }
-}, 5000);
+}, 10000);

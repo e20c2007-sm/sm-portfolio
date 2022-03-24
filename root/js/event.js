@@ -98,6 +98,9 @@ $(function(){
             $(this).addClass("checked");
             $(".skill-cloud .false").fadeOut(300);
         }
+        if(screen == "sp"){
+            $(".none-check").removeClass().addClass("this-checked")
+        }
     }).on("click", ".skill-sort.checked", function(){
         $(this).removeClass("checked");
         $(".this-checked").removeClass().addClass("none-check");
