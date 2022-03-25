@@ -32,10 +32,11 @@ function resetOffset(){
     detail = $("#detail-container").offset().top;
 }
 let contentsHeight;
+let contentTop;
 let multi;
 switch(screen){
     case "pc":
-        multi = 0.05;
+        multi = 0.1;
         break;
 
     case "sp":
@@ -43,11 +44,17 @@ switch(screen){
         break;
 }
 function resetHeight(){
+    contentTop = {
+        "prof":  prof - (screenHeight * 0.05),
+        "skill":  skill - (screenHeight * 0.05),
+        "work":  work - (screenHeight * 0.05),
+        "detail":  detail - (screenHeight * 0.05)
+    }
     contentsHeight = {
         "prof":  prof - (screenHeight * multi),
         "skill":  skill - (screenHeight * multi),
         "work":  work - (screenHeight * multi),
-        "detail":  detail - (screenHeight * multi),
+        "detail":  detail - (screenHeight * multi)
     }
     pageHeight = document.body.clientHeight
 }
@@ -62,6 +69,14 @@ getCsv("./data/tool.csv", "tools", "");
 getCsv("./data/work.csv", "works", "json");
 getCsv("./data/detail.csv", "details", "json");
 
+function noScroll(e){
+    e.preventDefault();
+}
+function beAble(){
+    window.removeEventListener("mousewheel", noScroll, { passive: false });
+    window.removeEventListener("touchmove", noScroll, { passive: false });
+}
+
 $(function(){
     resetOffset();
     resetHeight();
@@ -70,5 +85,21 @@ $(function(){
         resetOffset();
         resetHeight();
     }, 1000);
-    $("#page-thumb").load(`./ver/sp/`);
+    $("#page-gate").load(`./ver/${screen}/`);
+
+    window.addEventListener("mousewheel", noScroll, { passive: false });
+    window.addEventListener("touchmove", noScroll, { passive: false });
+
+    $(document).on("click", "#main-curcle", function(){
+        $("#pc-wrapper").animate({
+            "height": 0
+        }, 500, function(){
+            $("#thumb-container").fadeIn(1000, function(){
+                $("#main-contents").show();
+                setTimeout(()=>{
+                    beAble();
+                }, 1000);
+            })
+        });
+    });
 });

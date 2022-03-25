@@ -45,7 +45,7 @@ $(function(){
 
     $(document).on("click", ".nav-item", function(){
         let value = $(this).attr("data-value");
-        $('html, body').animate({scrollTop: contentsHeight[value]});
+        $('html, body').animate({scrollTop: contentTop[value]});
 
         if(screen == "sp"){
             closeMenu();
@@ -116,7 +116,7 @@ $(function(){
 
     $(document).on("click", "#arrow-container", () => {
         let main = $("#main-contents").offset().top;
-        $('html, body').animate({scrollTop: main}, 1000);
+        $('html, body').animate({scrollTop: contentTop["prof"]}, 1000);
     });
 
     $(window).scroll(() => {
