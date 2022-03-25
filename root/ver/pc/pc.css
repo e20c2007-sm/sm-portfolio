@@ -5,6 +5,7 @@
     overflow: hidden;
     position: relative;
     top: 0;
+    z-index: 30;
 }
 #pc-wrapper *{
     transition: 500ms ease-out;
