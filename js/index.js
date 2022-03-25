@@ -10,13 +10,25 @@ if(screen.width > 768){
 
 $(function(){
     setTimeout(()=>{
-        $("#welcome-text").fadeIn(1000, ()=>{
+        $("#welcome-text").fadeIn(100, ()=>{
             setTimeout(() => {
-                $("#welcome-text").fadeOut(1000, ()=>{
+                $("#welcome-text").fadeOut(100, ()=>{
                     $("#welcome-text").remove();
                     $("#main-container").show().load(`./vp/${screen.view}/`);
                 })
-            }, 2000);
+            }, 200);
         });
-    }, 1000);
+    }, 100);
+
+
+    // PC
+    $(document).on("animationend", "#corner-curcle", ()=>{
+        $("#my-img").show();
+    });
+
+    $(document).on("mouseover", "#corner-curcle", ()=>{
+        $("#my-img").addClass("hover");
+    }).on("mouseout", "#corner-curcle", ()=>{
+        $("#my-img.hover").removeClass("hover");
+    });
 });

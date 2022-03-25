@@ -1,0 +1,59 @@
+:root{
+    --bg: #ff6c16;
+    --font: #e4e4e4;
+}
+
+@keyframes rotateCurcle{
+    from{
+        transform: rotate(-90deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+#corner-curcle{
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50vw;
+    background: linear-gradient(var(--font) 50%, var(--bg) 50%);
+    position: absolute;
+    bottom: -25vw;
+    left: -25vw;
+    transform: rotate(-90deg);
+    z-index: 3;
+    animation: rotateCurcle 500ms linear 1s forwards;
+}
+
+@keyframes popUpMe{
+    0%{
+        opacity: 0;
+        bottom: -30vw;
+        left: -30vw;
+    }
+    80%{
+        opacity: 1;
+        bottom: -12.5vw;
+        left: -11.5vw;
+    }
+    100%{
+        bottom: -12vw;
+        left: -11vw;
+    }
+}
+#my-img{
+    width: auto;
+    height: 30vw;
+    position: absolute;
+    bottom: -12vw;
+    left: -11vw;
+    transform: rotate(45deg) scale(-1, 1);
+    z-index: 4;
+    transition: 300ms;
+    display: none;
+    animation: popUpMe 2s ease-out;
+    pointer-events: none;
+}
+#my-img.hover{
+    bottom: -5vw;
+    left: -4vw;
+}
