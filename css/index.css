@@ -1,0 +1,26 @@
+:root{
+    --bg: #ff711f;
+    --font: #e4e4e4;
+}
+
+#site-wrapper, #main-container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    color: var(--font);
+    background: var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+#welcome-text{
+    font-weight: 800;
+    font-size: 5rem;
+    padding: 1rem 2rem;
+    letter-spacing: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}

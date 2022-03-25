@@ -7,47 +7,15 @@
 
 @font-face{
     font-family: kanji;
-    src: url(./font/aoyagireisyosimo_ttf_2_01.ttf);
+    src: url(../font/aoyagireisyosimo_ttf_2_01.ttf);
 }
 @font-face {
     font-family: writed;
-    src: url(./font/gomarice_mukasi_mukasi.ttf);
+    src: url(../font/gomarice_mukasi_mukasi.ttf);
 }
 @font-face{
     font-family: base-font;
-    src: url(./font/Corporate-Logo-Rounded.ttf);
-}
-
-a, a:active{
-    text-decoration: none;
-    color: var(--base-color);
-}
-
-html{
-    font-size: 10px;
-    font-family: Arial;
-    color: #cecece;
-}
-h1{
-    margin: 0;
-}
-ul, li{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-body{
-    margin: 0;
-    overflow-x: hidden;
-}
-
-b{
-    padding: 0 1rem 0.3rem 1rem;
-    border-bottom: 0.3rem solid var(--base-color2);
-}
-
-img{
-    pointer-events: none;
+    src: url(../font/Corporate-Logo-Rounded.ttf);
 }
 
 .flex-row{
