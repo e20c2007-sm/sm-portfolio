@@ -26,6 +26,10 @@ b{
     border-bottom: 0.3rem solid var(--base-color2);
 }
 
+p{
+    margin: 0;
+}
+
 img{
     pointer-events: none;
 }
