@@ -201,12 +201,35 @@
     font-size: 15rem;
 }
 
-
 .guide{
     color: #e4c8b8;
     white-space: nowrap;
     font-size: 3rem;
     transition: 1s;
+}
+
+#white-curtain{
+    width: 150vw;
+    height: 150vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    pointer-events: none;
+}
+.white-bar{
+    width: 0;
+    height: 50vh;
+    background: #ffffff;
+    transition: 1s;
+}
+.white-bar.show{
+    width: 100%;
 }
 
 .no-event *{

@@ -53,3 +53,22 @@ function preloadImgs(src, imgs){
         });
     }
 }
+
+function elemShowCombo(vals){
+    console.log(vals)
+    let size = vals.elem.length;
+    if(vals.index >= size){
+        if(vals.link){
+            setTimeout(()=>{
+                window.location.href = vals.link;
+            }, vals.delay + 500);
+            
+        }
+    }else{
+        vals.elem.eq(vals.index).addClass(vals.cn);
+        vals.index++;
+        setTimeout(()=>{
+            elemShowCombo(vals);
+        }, vals.delay);
+    }
+}

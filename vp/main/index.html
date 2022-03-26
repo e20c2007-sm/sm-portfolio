@@ -9,8 +9,8 @@
     <script src="./vp/main/index.js"></script>
 </head>
 
-<div class="no-event">
-    <a href="./blog/">
+<div id="main-inner" class="no-event">
+    <a href="" data-target="blog">
         <div class="circle-container" data-link-posit="under">
             <div id="corner-circle-right" class="circle"></div>
             <img id="my-img-right" src="./vp/gallery/my_logo_woman.png" alt="澤田政嘉(女性)"/>
@@ -23,7 +23,7 @@
         </div>
     </a>
 
-    <a href="./introduce/">
+    <a href="./introduce/" data-target="introduce">
         <div class="circle-container" data-link-posit="above">
             <div id="corner-circle-left" class="circle"></div>
             <img id="my-img-left" src="./vp/gallery/my_logo.png" alt="澤田政嘉"/>
@@ -47,6 +47,13 @@
             <div>{{ under }}</div>
         </strong>
     </div>
+
+    <div id="white-curtain">
+        <div class="white-bar"></div>
+        <div class="white-bar"></div>
+        <div class="white-bar"></div>
+    </div>
+
     <script src="./vp/main/vue.js"></script>
 </div>
 

@@ -35,6 +35,19 @@ $(function(){
         });
     }, 1000);
 
+    $(document).on("click", "a", function(){
+        let href = $(this).attr("href");
+        if(href){
+            elemShowCombo({
+                elem: $(".white-bar"),
+                cn: "show",
+                index: 0,
+                link: href,
+                delay: 500
+            });
+        }
+        return false;
+    });
 
     // PC
     if(screen.view == "pc"){
