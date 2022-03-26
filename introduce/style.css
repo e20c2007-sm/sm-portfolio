@@ -443,14 +443,14 @@ main{
     color: #df993e;
 }
 
-#work-comment{
+.disclaimer{
     width: 100%;
     color: var(--font-white);
     font-size: 3rem;
     margin-left: 2vw;
     position: relative;
 }
-#work-comment::before{
+.disclaimer::before{
     content: "※";
     color: var(--base-color3);
     position: absolute;
@@ -997,7 +997,7 @@ footer{
         line-height: 2vh;
     }
 
-    #work-comment{
+    .disclaimer{
         font-size: 1rem;
     }
 

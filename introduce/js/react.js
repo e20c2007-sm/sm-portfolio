@@ -94,6 +94,10 @@ function Skill(props){
                 <div class="skill-cloud">
                     {tools}
                 </div>
+
+                <div class="disclaimer">
+                    2022年4月時点
+                </div>
             </div>
         );
     }else{
@@ -145,7 +149,7 @@ function Work(props){
                 {works}
             </ul>
             
-            <div id="work-comment">
+            <div class="disclaimer">
                 一部学校の課題作品を掲載していますが、どれも設計・仕様考案まで開発者自ら行った作品です。
                 内容に関する指示がない状態から作っているため、ここでは制作物として紹介しています。
             </div>
