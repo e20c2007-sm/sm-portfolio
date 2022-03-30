@@ -55,7 +55,6 @@ function preloadImgs(src, imgs){
 }
 
 function elemShowCombo(vals){
-    console.log(vals)
     let size = vals.elem.length;
     if(vals.index >= size){
         if(vals.link){

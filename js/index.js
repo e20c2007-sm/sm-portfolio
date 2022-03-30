@@ -22,18 +22,21 @@ function tradeVal(index){
     vals[`guide_${index}`] = w;
 }
 
-
+let vp = "";
+if(screen.view == "sp"){
+    vp = "sp.html";
+}
 $(function(){
     setTimeout(()=>{
-        $("#welcome-text").fadeIn(500, ()=>{
+        $("#welcome-text").fadeIn(50, ()=>{
             setTimeout(() => {
-                $("#welcome-text").fadeOut(500, ()=>{
+                $("#welcome-text").fadeOut(50, ()=>{
                     $("#welcome-text").remove();
-                    $("#main-container").show().load(`./vp/main/`);
+                    $("#main-container").show().load(`./vp/main/${vp}`);
                 })
-            }, 2000);
+            }, 200);
         });
-    }, 1000);
+    }, 100);
 
     $(document).on("click", "a", function(){
         let href = $(this).attr("href");
@@ -65,6 +68,13 @@ $(function(){
             let index = $(this).attr("data-link-posit");
             $(`.${index}`).removeClass("hover");
             tradeVal(index);
+        });
+    }
+
+    // SP
+    if(screen.view == "sp"){
+        $(document).on("animationend", "#center-text-area", ()=>{
+            $(".link-container").show();
         });
     }
 });

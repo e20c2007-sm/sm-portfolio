@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="./vp/main/sp.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<a href="" data-target="blog">
+    <div id="above-container" class="link-container">
+        <div class="container-inner">
+            <img src="./vp/gallery/blog_bg.png" />
+            <div class="title">
+                BLOG
+            </div>
+        </div>
+    </div>
+</a>
+
+<a href="./introduce/" data-target="introduce">
+    <div id="under-container" class="link-container">
+        <div class="container-inner">
+            <img src="./vp/gallery/portfolio_bg.png" />
+            <div class="title">
+                PORTFOLIO
+            </div>
+        </div>
+    </div>
+</a>
+
+<div id="center-text-area">
+    <strong class="center-text above">
+        <div>{{ above }}</div>
+        <p class="guide">{{guide_above}}</p>
+    </strong>
+    <strong class="center-text under">
+        <p class="guide">{{guide_under}}</p>
+        <div>{{ under }}</div>
+    </strong>
+</div>
+
+<div id="white-curtain">
+    <div class="white-bar"></div>
+    <div class="white-bar"></div>
+    <div class="white-bar"></div>
+</div>
+
+<script src="./vp/main/vue.js"></script>
+</html>

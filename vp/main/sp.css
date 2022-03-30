@@ -1,0 +1,125 @@
+:root{
+    --bg: #ff6c16;
+    --font: #e4e4e4;
+}
+@keyframes widthStretch{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100vw;
+    }
+}@keyframes widthStretchCta{
+    from{
+        padding: 0;
+        width: 0;
+    }
+    to{
+        padding: 5vw 30vw;
+        width: 90vw;
+    }
+}
+strong{
+    display: block;
+}
+#center-text-area{
+    box-sizing: content-box;
+    width: 90vw;
+    padding: 5vw 30vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    position: absolute;
+    z-index: 10;
+    background: var(--bg);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: widthStretchCta 1s ease-out;
+}
+
+.center-text{
+    font-size: 5rem;
+    opacity: 1;
+    transition: 500ms ease-out;
+    z-index: 2;
+}
+.center-text:first-child{
+    text-align: left;
+}
+.center-text:last-child{
+    text-align: right;
+}
+.guide{
+    color: #e4c8b8;
+    white-space: nowrap;
+    font-size: 3rem;
+    transition: 1s;
+}
+
+.link-container{
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: widthStretch 500ms ease-out forwards;
+    display: none;
+}
+#above-container{
+    top: 0;
+    right: 0;
+}
+#under-container{
+    bottom: 0;
+    left: 0;
+}
+
+.container-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.container-inner img{
+    width: auto;
+    height: 100%;
+    filter: brightness(50%);
+}
+
+.title{
+    position: absolute;
+    font-weight: 900;
+    font-size: 5rem;
+    color: var(--font);
+}
+#above-container .title{
+    top: 3vw;
+    left: 3vw;
+}
+#under-container .title{
+    bottom: 3vw;
+    right: 3vw;
+}
+
+#white-curtain{
+    width: 150vw;
+    height: 150vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    pointer-events: none;
+}
+.white-bar{
+    width: 0;
+    height: 50vh;
+    background: #ffffff;
+    transition: 1s;
+}
+.white-bar.show{
+    width: 100%;
+}

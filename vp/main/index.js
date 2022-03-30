@@ -6,7 +6,7 @@ let vpDelay;
 if(screen.view == "pc"){
     vpDelay = 3500;
 }else{
-    vpDelay = 1500;
+    vpDelay = 300;
 }
 setTimeout(()=>{
     $("div.no-event").removeClass();
