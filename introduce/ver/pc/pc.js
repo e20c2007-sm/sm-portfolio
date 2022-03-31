@@ -5,6 +5,7 @@ let mainCurcle = new Vue({
     }
 });
 
+
 $(function(){
     $(document).on("mouseover", "#main-curcle", function(){
         let target = $(this);
