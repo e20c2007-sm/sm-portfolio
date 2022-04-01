@@ -92,6 +92,7 @@ main{
 }
 .content:last-child{
     padding-bottom: 0;
+    min-height: 60rem;
 }
 
 .info-container{

@@ -5,15 +5,18 @@ let mainCurcle = new Vue({
     }
 });
 
+circlesRender();
 
 $(function(){
     $(document).on("mouseover", "#main-curcle", function(){
         let target = $(this);
         mainCurcle.value = "CLICK";
         target.addClass("bigger");
+        $(".circles").addClass("move-center");
     }).on("mouseout", "#main-curcle", function(){
         let target = $(this);
         mainCurcle.value = "HOVER";
         target.removeClass("bigger");
+        $(".circles").removeClass("move-center");
     });
 });

@@ -174,11 +174,6 @@ function Detail(props){
             <ul id="detail-list">
                 {items}
             </ul>
-            <div id="detail-guide">
-                <div id="guide-scroll">
-                    より詳しい内容についてはメールなどでお問い合わせください。
-                </div>
-            </div>
         </div>
     );
 }
@@ -220,4 +215,56 @@ class Container extends React.Component{
                 );
         }
     };
+}
+
+function circlesRender(){
+    let circles = [];
+    for(let i=0; i<100; i++){
+        circles.push(
+            {
+                posit: {top: `${randomNum(90)}%`, left: `${randomNum(90)+5}%`},
+                size: `${randomNum(5)}vw`,
+                bg: "#ffd6b0",
+                "class": "circles",
+                delay: `${randomNum(500)}ms`
+            }
+        );
+    };
+    
+    ReactDOM.render(
+        <Circles
+            circles={circles}
+        />,
+        $("#circles-container")[0]
+    );
+    
+}
+class Circles extends React.Component{
+    render(){
+        let data = this.props.circles;
+        let circleEles = [];
+        data.forEach(e => {
+            circleEles.push(
+              <div
+                class={e.class}
+                style={{
+                    top: e.posit.top,
+                    left: e.posit.left,
+                    width: e.size,
+                    height: e.size,
+                    background: e.bg,
+                    "border\-radius": e.size,
+                    "transition\-duration": "200ms",
+                    "transition\-delay": e.delay
+
+                }}
+              />  
+            );
+        });
+        return(
+            <div>
+                {circleEles}
+            </div>
+        )
+    }
 }

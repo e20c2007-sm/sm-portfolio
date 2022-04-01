@@ -28,15 +28,15 @@ if(screen.view == "sp"){
 }
 $(function(){
     setTimeout(()=>{
-        $("#welcome-text").fadeIn(50, ()=>{
+        $("#welcome-text").fadeIn(500, ()=>{
             setTimeout(() => {
-                $("#welcome-text").fadeOut(50, ()=>{
+                $("#welcome-text").fadeOut(500, ()=>{
                     $("#welcome-text").remove();
                     $("#main-container").show().load(`./vp/main/${vp}`);
                 })
-            }, 200);
+            }, 2000);
         });
-    }, 100);
+    }, 1000);
 
     $(document).on("click", "a", function(){
         let href = $(this).attr("href");
