@@ -3,7 +3,7 @@
     height: 100vh;
     background: #ffffff;
     overflow: hidden;
-    position: relative;
+    position: fixed;
     top: 0;
     z-index: 30;
 }
@@ -71,4 +71,8 @@
     text-align: center;
     font-size: 3rem;
     transition: none;
+}
+
+#thumb-container{
+    display: none;
 }

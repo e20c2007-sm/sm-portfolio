@@ -89,17 +89,4 @@ $(function(){
 
     window.addEventListener("mousewheel", noScroll, { passive: false });
     window.addEventListener("touchmove", noScroll, { passive: false });
-
-    $(document).on("click", "#main-curcle", function(){
-        $("#pc-wrapper").animate({
-            "height": 0
-        }, 500, function(){
-            $("#thumb-container").fadeIn(1000, function(){
-                $("#main-contents").show();
-                setTimeout(()=>{
-                    beAble();
-                }, 1000);
-            })
-        });
-    });
 });

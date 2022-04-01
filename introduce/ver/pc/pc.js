@@ -8,6 +8,19 @@ let mainCurcle = new Vue({
 circlesRender();
 
 $(function(){
+    $(document).on("click", "#main-curcle", function(){
+        $("#pc-wrapper").animate({
+            "height": 0
+        }, 500, function(){
+            $("#thumb-container").fadeIn(1000, function(){
+                $("#pc-wrapper").remove();
+                $("#main-contents").show();
+                setTimeout(()=>{
+                    beAble();
+                }, 1000);
+            })
+        });
+    });
     $(document).on("mouseover", "#main-curcle", function(){
         let target = $(this);
         mainCurcle.value = "CLICK";
