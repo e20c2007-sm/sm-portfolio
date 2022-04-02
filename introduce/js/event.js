@@ -171,7 +171,7 @@ $(function(){
                     contentsView[e] = false;
                     cvCount++;
                     if(cvCount >= 4){
-                        $("footer").animate({"opacity": "1"}, 500, "linear");
+                        $("footer, #detail-guide").animate({"opacity": "1"}, 500, "linear");
                     }
                 }
             }

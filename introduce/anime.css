@@ -152,3 +152,45 @@
     animation: fadeIn 200ms linear forwards;
 }
 
+@keyframes bf1{
+    from{
+        transform-origin: center;
+        transform: rotateZ(45deg) rotateY(0) rotateX(0);
+    }
+    to{
+        transform-origin: center;
+        transform: rotateZ(45deg) rotateY(360deg) rotateX(360deg);
+    }
+}
+@keyframes bf2{
+    from{
+        transform-origin: center;
+        transform: rotate(22.5deg) rotateY(0) rotateX(0);
+    }
+    to{
+        transform-origin: center;
+        transform: rotate(22.5deg) rotateY(360deg) rotateX(360deg);
+    }
+}
+@keyframes bf3{
+    from{
+        transform-origin: center;
+        transform: rotate(-22.5deg) rotateY(0) rotateX(0);
+    }
+    to{
+        transform-origin: center;
+        transform: rotate(-22.5deg) rotateY(-360deg) rotateX(-360deg);
+    }
+}
+#box-frame1 div{
+    transform: rotateZ(45deg) rotateY(0) rotateX(0);
+    animation: bf1 15s linear infinite 3s;
+}
+#box-frame2 div{
+    transform: rotate(22.5deg) rotateY(0) rotateX(0);
+    animation: bf2 15s linear infinite 3s;
+}
+#box-frame3 div{
+    transform: rotate(-22.5deg) rotateY(0) rotateX(0);
+    animation: bf3 15s linear infinite 3s;
+}

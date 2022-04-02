@@ -506,6 +506,7 @@ main{
     max-width: none;
     text-align: left;
     padding: 1vw 0;
+    opacity: 0;
     position: relative;
     bottom: 0;
 }
@@ -752,17 +753,46 @@ footer{
 #site-bg{
     width: 100vw;
     height: 100vh;
-    background: var(--base-color2);
+    background: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 0;
+}
+#site-bg.active{
+    background: radial-gradient(#e8e6c8 0%, #fff4cb 10%, var(--base-color2) 40%, var(--base-color2) 100%);
 }
 
 #site-bg-container{
     width: 100vw;
     height: 100vh;
     position: relative;
+}
+.bg-box{
+    z-index: 3;
+}
+.box-frame{
+    width: 40vw;
+    height: 40vw;
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.box-frame div{
+    width: 40vw;
+    height: 40vw;
+    border: 0.5vw solid #ffc250;
+    position: relative;
+    transition: 1s;
+    perspective: 1000px;
+    opacity: 0.5;
+    transform-style: preserve-3d;
 }
 
 @keyframes rotate{

@@ -9,6 +9,7 @@ circlesRender();
 
 $(function(){
     $(document).on("click", "#main-curcle", function(){
+        $("#site-bg").addClass("active");
         $("#pc-wrapper").animate({
             "height": 0
         }, 500, function(){
