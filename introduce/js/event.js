@@ -120,62 +120,64 @@ $(function(){
     });
 
     $(window).scroll(() => {
-        let wh = window.innerHeight;
-        let st = $(window).scrollTop();
-        if(st >= wh){
-            $("header").css("top", "0");
-        }else if(!($("#ham-menu").hasClass("opened"))){
-            $("header").css("top", "-10vh")
-        }
+        if(pageActive){
+            let wh = window.innerHeight;
+            let st = $(window).scrollTop();
+            if(st >= wh){
+                $("header").css("top", "0");
+            }else if(!($("#ham-menu").hasClass("opened"))){
+                $("header").css("top", "-10vh")
+            }
 
-        let bottom = pageHeight - wh - 460;
-        if(bottom <= st && scrollFlag && cvCount >= 4){
-            scrollFlag = false;
-            let elem = $(div).addClass("fixed-rb fixed-rb-in");
-            wrapper.append(elem);
-            ReactDOM.render(
-                <Arrow />,
-                elem[0]
-            );
-        }else if(bottom >= st && !(scrollFlag)){
-            $(".fixed-rb").addClass("fixed-rb-out");
-            setTimeout(()=>{
-                scrollFlag = true;
-                $(".fixed-rb").remove();
-            }, 200)
-        }
+            let bottom = pageHeight - wh - 460;
+            if(bottom <= st && scrollFlag && cvCount >= 4){
+                scrollFlag = false;
+                let elem = $(div).addClass("fixed-rb fixed-rb-in");
+                wrapper.append(elem);
+                ReactDOM.render(
+                    <Arrow />,
+                    elem[0]
+                );
+            }else if(bottom >= st && !(scrollFlag)){
+                $(".fixed-rb").addClass("fixed-rb-out");
+                setTimeout(()=>{
+                    scrollFlag = true;
+                    $(".fixed-rb").remove();
+                }, 200)
+            }
 
-        let padding = screenWidth * 0.1;
-        let ary = [
-            "prof",
-            "skill",
-            "work",
-            "detail"
-        ];
-        ary.forEach(e => {
-            if(contentsHeight[e]-padding <= st && cvCount < 4){
-                if(contentsView[e]){
-                    let value = contentsVal[e];
-                    ReactDOM.render(
-                        <Container
-                            opt={e}
-                            title={value.title}
-                            num={value.num}
-                            list={value.list}
-                        />,
-                        $(`#${e}-container`)[0],
-                        ()=>{
-                            $(`*[name=${e}]`).show();
+            let padding = screenWidth * 0.1;
+            let ary = [
+                "prof",
+                "skill",
+                "work",
+                "detail"
+            ];
+            ary.forEach(e => {
+                if(contentsHeight[e]-padding <= st && cvCount < 4){
+                    if(contentsView[e]){
+                        let value = contentsVal[e];
+                        ReactDOM.render(
+                            <Container
+                                opt={e}
+                                title={value.title}
+                                num={value.num}
+                                list={value.list}
+                            />,
+                            $(`#${e}-container`)[0],
+                            ()=>{
+                                $(`*[name=${e}]`).show();
+                            }
+                        );
+                        contentsView[e] = false;
+                        cvCount++;
+                        if(cvCount >= 4){
+                            $("footer, #detail-guide").animate({"opacity": "1"}, 500, "linear");
                         }
-                    );
-                    contentsView[e] = false;
-                    cvCount++;
-                    if(cvCount >= 4){
-                        $("footer, #detail-guide").animate({"opacity": "1"}, 500, "linear");
                     }
                 }
-            }
-        });
+            });
+        }
     });
     
     $(document).on("animationend", ".fixed-rb-in", function(){

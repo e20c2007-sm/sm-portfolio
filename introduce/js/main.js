@@ -1,4 +1,4 @@
-
+let pageActive = false;
 let myData = {
     "skills": "",
     "tools": "",
@@ -86,7 +86,4 @@ $(function(){
         resetHeight();
     }, 1000);
     $("#page-gate").load(`./ver/${screen}/`);
-
-    window.addEventListener("mousewheel", noScroll, { passive: false });
-    window.addEventListener("touchmove", noScroll, { passive: false });
 });

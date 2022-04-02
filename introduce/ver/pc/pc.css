@@ -10,14 +10,14 @@
 #pc-wrapper *{
     transition: 500ms ease-out;
 }
-#curcle-container{
+#circle-container{
     width: 100vw;
     height: 100vh;
     background: #ffffff;
     overflow: hidden;
     position: relative;
 }
-#main-curcle{
+#main-circle{
     font-size: 2.5vw;
     color: #ffffff;
     background: #ffa551;
@@ -37,7 +37,7 @@
     z-index: 20;
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
-#main-curcle.bigger{
+#main-circle.bigger{
     font-size: 5vw;
     width: 30vw;
     height: 30vw;
@@ -73,6 +73,87 @@
     transition: none;
 }
 
+
 #thumb-container{
-    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    user-select: none;
+    transition: 500ms;
+    opacity: 0;
+}
+#thumb-ribbon-top{
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    top: 0;
+    background: url(../../gallery/thumb/filter-stone.jpg);
+    z-index: 5;
+}
+#thumb-ribbon-bottom{
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    bottom: 0;
+    background: url(../../gallery/thumb/filter-stone.jpg);
+    background-size: contain;
+    z-index: 5;
+}
+
+#thumb-bg-container{
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+}
+#thumb-bg-inner{
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+}
+#thumb-bg{
+    width: 100vw;
+    height: 50vh;
+    z-index: 0;
+    position: absolute;
+}
+#thumb-human{
+    width: 30rem;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 6;
+    transform: translateX(-50%);
+}
+.thumb-msg-container-left{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.thumb-msg{
+    color: #eeeeee;
+    font-size: 20rem;
+}
+.thumb-msg-container-left .thumb-msg{
+    text-shadow: -0.5rem 0.5rem 3rem #000000;
+    padding: 10vh 3rem 10vh 10rem;
+    background: #ffffff4c;
+    transform: perspective(700px) rotateY(35deg);
+}
+.thumb-msg-container-right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.thumb-msg-container-right .thumb-msg{
+    text-shadow: 0.5rem 0.5rem 3rem #000000;
+    padding: 10vh 10rem 10vh 3rem;
+    background: #ffffff4c;
+    transform: perspective(700px) rotateY(-35deg);
 }

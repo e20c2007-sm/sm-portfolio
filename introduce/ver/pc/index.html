@@ -5,8 +5,8 @@
     <script src="./ver/pc/circle.js" type="text/babel"></script>
 </head>
 <div id="pc-wrapper">
-    <div id="curcle-container">
-        <div id="main-curcle">
+    <div id="circle-container">
+        <div id="main-circle">
             <div id="mc-text" class="able-elem">
                 {{value}}
             </div>
@@ -19,13 +19,21 @@
     <div id="thumb-ribbon-top"></div>
     <div id="thumb-ribbon-bottom"></div>
     <img id="thumb-human" src="./gallery/thumb-human.png" alt="私の画像" />
-    <div id="thumb-msg-container">
-        <div id="thumb-msg">
-            ここが<br>
-            僕だけの世界
+    <div class="thumb-msg-container-left">
+        <div class="thumb-msg">
+            ここが―
         </div>
     </div>
-    <img id="thumb-bg" src="./gallery/thumb/thumb-bg.png" alt="私の背景画像" />
+    <div class="thumb-msg-container-right">
+        <div class="thumb-msg">
+            僕の世界
+        </div>
+    </div>
+    <div id="thumb-bg-container">
+        <div id="thumb-bg-inner">
+            <img id="thumb-bg" src="./gallery/thumb/thumb-bg.png" alt="私の背景画像" />
+        </div>
+    </div>
 </div>
 <script src="./ver/pc/pc.js"></script>
 </html>

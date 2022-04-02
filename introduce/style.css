@@ -72,67 +72,7 @@ main{
     width: 100vw;
     height: 100vh;
     background: #ffffff2d;
-}
-
-#thumb-container{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-#thumb-ribbon-top{
-    width: 100vw;
-    height: 15vh;
-    position: absolute;
-    top: 0;
-    background: url(./gallery/thumb/filter-stone.jpg);
-    z-index: 5;
-}
-#thumb-ribbon-bottom{
-    width: 100vw;
-    height: 20vh;
-    position: absolute;
-    bottom: -5vh;
-    background: url(./gallery/thumb/filter-stone.jpg);
-    background-size: contain;
-    z-index: 5;
-}
-#thumb-ribbon-bottom::before{
-    content: "";
-    width: 100vw;
-    height: 5vh;
-    background: linear-gradient(#ffffff00, var(--base-color2));
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-}
-#thumb-bg{
-    width: 100vw;
-    height: 50vh;
-    z-index: 0;
-    position: absolute;
-    bottom: 0;
-}
-#thumb-human{
-    width: 30rem;
-    height: auto;
-    position: absolute;
-    right: 20vw;
-    bottom: -5vh;
-    z-index: 6;
-}
-#thumb-msg-container{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-#thumb-msg{
-    color: var(--base-color3);
-    padding: 2.5vh 5vw;
-    font-size: 15rem;
-    background: #ffffff4c;
-    transform: perspective(700px) rotateY(25deg);
+    overflow: hidden;
 }
 
 #main-contents{
@@ -810,6 +750,9 @@ footer{
     font-size: 1.8rem;
     font-weight: 700;
 }
+.footers{
+    display: none;
+}
 
 /* 背景 */
 #site-bg{
@@ -820,6 +763,7 @@ footer{
     top: 0;
     left: 0;
     z-index: 0;
+    opacity: 0;
 }
 #site-bg.active{
     background: radial-gradient(#e8e6c8 0%, #fff4cb 10%, var(--base-color2) 40%, var(--base-color2) 100%);
