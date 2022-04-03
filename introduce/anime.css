@@ -24,9 +24,9 @@
         transform: scale(1) rotate(0);
     }
 }
-.info-container{
+/* .info-container{
     animation: scaleChange 15s ease-in-out infinite;
-}
+} */
 
 @keyframes scaleUp{
     0%{
@@ -37,6 +37,18 @@
     }
     60%{
         transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleFloat{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.5);
     }
     100%{
         transform: scale(1);
@@ -152,6 +164,16 @@
     animation: fadeIn 200ms linear forwards;
 }
 
+@keyframes myFace{
+    from{
+        transform-origin: center;
+        transform: rotate(0) rotateY(0) rotateX(0);
+    }
+    to{
+        transform-origin: center;
+        transform: rotate(360deg) rotateY(360deg) rotateX(360deg);
+    }
+}
 @keyframes bf1{
     from{
         transform-origin: center;
@@ -193,4 +215,7 @@
 #box-frame3 div{
     transform: rotate(-22.5deg) rotateY(0) rotateX(0);
     animation: bf3 15s linear infinite 3s;
+}
+#my-face-img{
+    animation: scaleFloat 10s linear infinite, myFace 15s linear infinite 3s;
 }

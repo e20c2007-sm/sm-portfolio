@@ -14,7 +14,8 @@ $(function(){
         $("#pc-wrapper").animate({
             "height": 0
         }, 500, function(){
-            $("#site-bg, #thumb-container").animate({"opacity": 1}, 1000, function(){
+            $("#thumb-container").animate({"opacity": 1}, 1000, function(){
+                $("#site-bg, #my-face-frames").animate({"opacity": 1}, 1000);
                 $("#pc-wrapper").remove();
                 $( "#thumb-bg" ).mgGlitch({
                     // set 'true' to stop the plugin

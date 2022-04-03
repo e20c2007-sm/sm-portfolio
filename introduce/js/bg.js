@@ -9,7 +9,7 @@ class BgBox extends React.Component{
             <div class={`bg-box move-${way}`} style={{
                 width: size,
                 height: size,
-                border: `${color} solid 0.5vw`,
+                border: `${color} solid 0.3vw`,
                 opacity: "0.5",
                 position: "absolute",
                 top: `${position}vh`
@@ -22,15 +22,15 @@ let cont = $("#site-bg-container");
 
 const pattern = [
     {
-        size: "6vw",
+        size: "3vw",
         color: "#FABC61"
     },
     {
-        size: "4.5vw",
+        size: "2vw",
         color: "#FAE174"
     },
     {
-        size: "3vw",
+        size: "1vw",
         color: "#FFB928"
     }
 ];

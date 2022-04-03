@@ -73,6 +73,12 @@ main{
     height: 100vh;
     background: #ffffff2d;
     overflow: hidden;
+    position: relative;
+}
+
+#page-gate{
+    position: absolute;
+    z-index: 50;
 }
 
 #main-contents{
@@ -774,13 +780,31 @@ footer{
     height: 100vh;
     position: relative;
 }
+#my-face-frames{
+    opacity: 0;
+    z-index: 20;
+}
+#my-face-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#my-face-img{
+    width: 35vw;
+    height: auto;
+    filter: brightness(200%);
+    opacity: 0.8;
+    position: relative;
+}
 .bg-box{
+    opacity: 0.5;
     z-index: 3;
 }
 .box-frame{
     width: 30vw;
     height: 30vw;
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     top: 50%;
     left: 50%;
