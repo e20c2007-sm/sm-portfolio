@@ -216,6 +216,25 @@
     transform: rotate(-22.5deg) rotateY(0) rotateX(0);
     animation: bf3 15s linear infinite 3s;
 }
-#my-face-img{
-    animation: scaleFloat 10s linear infinite, myFace 15s linear infinite 3s;
+#my-face-img.my-face-move{
+    animation: scaleFloat 15s linear infinite, myFace 15s linear infinite;
+}
+
+@keyframes lightUp{
+    0%{
+        filter: brightness(120%) drop-shadow(0 0 0vw #fff0c5);
+    }
+    50%{
+        filter: brightness(120%) drop-shadow(0 0 5vw #fbff7a);
+    }
+    100%{
+        filter: brightness(120%) drop-shadow(0 0 0vw #fff0c5);
+    }
+}
+#my-face-img.my-face-move.stop{
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#my-face-img.light-up{
+    animation: lightUp 10s linear infinite;
 }

@@ -34,7 +34,7 @@ $(function(){
                     $("#welcome-text").remove();
                     $("#main-container").show().load(`./vp/main/${vp}`);
                 })
-            }, 2000);
+            }, 1000);
         });
     }, 1000);
 

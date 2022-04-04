@@ -14,6 +14,7 @@
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/mgGlitch.min.js"></script>
+    <script src="./js/t.min.js"></script>
     <script src="./js/vue.min.js"></script>
     <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
@@ -62,7 +63,7 @@
                 <div id="page-gate"></div>
                 <div id="my-face-frames">
                     <div id="my-face-container">
-                        <img id="my-face-img" src="./gallery/my_logo_head.png" alt="私のお顔" />
+                        <img id="my-face-img" class="my-face-move" src="./gallery/my_logo_head.png" alt="私のお顔" />
                     </div>
                         <div id="box-frame1" class="box-frame">
                         <div></div>
@@ -74,7 +75,16 @@
                         <div></div>
                     </div>
                 </div>
+
+                <div id="thumb-bottom">
+                    <div class="well-said">
+                        <div>"何となく"を形に</div>
+                    </div>
+                </div>
+
+                <div id="page-thumb-bg"></div>
             </div>
+
             <div id="main-contents" style="display: none;">
                 <div id="prof-container" class="content"></div>
                 <div id="skill-container" class="content"></div>

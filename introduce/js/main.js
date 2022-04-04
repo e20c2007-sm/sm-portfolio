@@ -76,6 +76,15 @@ function beAble(){
     window.removeEventListener("mousewheel", noScroll, { passive: false });
     window.removeEventListener("touchmove", noScroll, { passive: false });
 }
+function startPage(){
+    $("#my-face-img").addClass("stop");
+    $("#main-contents").show();
+    $(".footers").removeClass("footers");
+    $("#page-thumb-bg").animate({"opacity": 1}, 2000);
+    $("#thumb-bottom .well-said").fadeIn(2000, ()=>{
+        beAble();
+    });
+}
 
 $(function(){
     resetOffset();

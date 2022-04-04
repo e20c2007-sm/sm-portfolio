@@ -34,6 +34,36 @@
     user-select: none;
 }
 
+.well-said{
+    font-size: 5vw;
+    color: var(--base-color);
+    font-family: Yu Mincho, YuMincho, 游明朝, 游明朝体;
+    white-space: nowrap;
+    height: 5.2vw;
+    line-height: 5.2vw;
+    position: relative;
+    display: none;
+}
+.well-said::before, .well-said::after{
+    content: "";
+    width: 10vw;
+    max-width: 15rem;
+    height: 0.1rem;
+    background: var(--base-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.well-said::before{
+    left: -10vw;
+    margin-right: 1vw;
+}
+.well-said::after{
+    right: -10vw;
+    margin-left: 1vw;
+}
+
+
 .fixed-rb{
     position: fixed;
     right: 3vw;
@@ -81,11 +111,35 @@ main{
     z-index: 50;
 }
 
+#thumb-bottom{
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+}
+#thumb-bottom .well-said{
+    color: var(--font-white);
+}
+#thumb-bottom .well-said::before, #thumb-bottom .well-said::after{
+    background: var(--font-white);
+}
+
+#page-thumb-bg{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: #2f2f2fb1;
+    top: 0;
+    opacity: 0;
+    z-index: 0;
+}
+
 #main-contents{
     width: 100vw;
     padding-top: 10vh;
     padding-bottom: 46rem;
-    background: linear-gradient(#ffffff2d 0%, #ffffff7e 5%, #ffffff7e 100%);
+    background: #ffffff7e;
 }
 
 .content{
@@ -789,13 +843,15 @@ footer{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 20;
 }
 #my-face-img{
     width: 35vw;
     height: auto;
-    filter: brightness(200%);
-    opacity: 0.8;
+    filter: brightness(120%);
+    opacity: 1;
     position: relative;
+    transition: 500ms;
 }
 .bg-box{
     opacity: 0.5;
@@ -804,7 +860,7 @@ footer{
 .box-frame{
     width: 30vw;
     height: 30vw;
-    z-index: 1;
+    z-index: 19;
     position: absolute;
     top: 50%;
     left: 50%;

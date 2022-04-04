@@ -73,13 +73,9 @@ $(function(){
             setTimeout(()=>{
                 $("#thumb-container").remove();
                 pageActive = true;
-                $("#main-contents").show();
                 window.addEventListener("mousewheel", noScroll, { passive: false });
                 window.addEventListener("touchmove", noScroll, { passive: false });
-                $(".footers").removeClass("footers");
-                setTimeout(()=>{
-                    beAble();
-                }, 1000);
+                startPage();
             }, 800);
         };
     }

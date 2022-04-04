@@ -199,5 +199,7 @@ $(function(){
         setTimeout(()=>{
             addClassCombo($(".detail-item"), "slide-in", 500, 0, $(".detail-item").length);
         }, 500);
+    }).on("animationend", "#my-face-img.my-face-move.stop", function(){
+        $(this).addClass("light-up").removeClass("my-face-move, stop");
     });
 });
