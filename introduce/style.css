@@ -140,6 +140,22 @@ main{
     padding-top: 10vh;
     padding-bottom: 46rem;
     background: #ffffff7e;
+    position: relative;
+}
+#main-contents::after{
+    content: "\025bc";
+    font-size: 10vw;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 10vw;
+    height: 10.5vw;
+    line-height: 10.5vw;
+    overflow: visible;
+    text-align: center;
+    color: #2f2f2f88;
+    transform: translateX(-50%) scale(10, 0.6);
+    position: absolute;
+    top: 0;
+    left: 50%;
 }
 
 .content{
@@ -968,6 +984,12 @@ footer{
     }
     #ft-logo{
         display: none;
+    }
+
+    #thumb-bottom{
+        position: absolute;
+        bottom: 10vh;
+        z-index: 30;
     }
 
     #prof-container{

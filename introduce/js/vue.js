@@ -14,7 +14,7 @@ function changeThumbBtm(){
             clearTimeout(timers.change_text.time);
             timers.change_text.time = "";
             changeText({"key": "thumb_btm", "target": $("#thumb-bottom")});
-        }, 10000);
+        }, 15000);
         timers.change_text.flag = true;
         return false;
     }else{

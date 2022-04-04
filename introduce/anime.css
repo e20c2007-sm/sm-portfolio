@@ -231,10 +231,17 @@
         filter: brightness(120%) drop-shadow(0 0 0vw #fff0c5);
     }
 }
-#my-face-img.my-face-move.stop{
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+@keyframes scaleOut{
+    from{
+        transform: scale(1) rotate(360deg) rotateY(360deg) rotateX(360deg);
+    }
+    to{
+        transform: scale(0) rotate(0) rotateY(0) rotateX(0);
+    }
+}
+#my-face-img.out{
+    animation: scaleOut 500ms linear;
 }
 #my-face-img.light-up{
-    animation: lightUp 10s linear infinite;
+    animation: lightUp 10s linear infinite, scaleUp 3s linear forwards;
 }

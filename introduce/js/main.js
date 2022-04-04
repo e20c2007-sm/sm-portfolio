@@ -80,7 +80,7 @@ function beAble(){
     window.removeEventListener("touchmove", noScroll, { passive: false });
 }
 function startPage(){
-    $("#my-face-img").addClass("stop");
+    $("#my-face-img").addClass("out");
     $("#main-contents").show();
     $(".footers").removeClass("footers");
     $("#page-thumb-bg").animate({"opacity": 1}, 2000);

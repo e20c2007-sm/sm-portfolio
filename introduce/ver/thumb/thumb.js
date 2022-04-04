@@ -1,3 +1,31 @@
+let thumb = {
+    count: 0,
+    scale: 1,
+    add: 0.1,
+}
+let scaleUpBg = function(e){
+    if(thumb.count < 500){
+        thumb.scale += thumb.add;
+        $("#thumb-container").css({
+            "transform": `scale(${thumb.scale})`
+        });
+        thumb.count += Math.abs(e.wheelDelta)
+    }else{
+        window.removeEventListener("mousewheel", scaleUpBg, { passive: false });
+        $("#thumb-container").css({
+            "transform": "scale(5)",
+            "opacity": 0
+        });
+        setTimeout(()=>{
+            $("#thumb-container").remove();
+            pageActive = true;
+            window.addEventListener("mousewheel", noScroll, { passive: false });
+            window.addEventListener("touchmove", noScroll, { passive: false });
+            startPage();
+        }, 800);
+    };
+}
+
 let bar = {}
 bar.num = 0;
 function barClose(){
@@ -36,8 +64,9 @@ function startThumb(){
             glitch2TimeMin : 10, 
             // set max time for glitch 2 elem
             glitch2TimeMax : 100, 
-            });
-    }, 1000);
+        });
+        window.addEventListener("mousewheel", scaleUpBg, { passive: false });
+    }, 500);
 }
 
 $(function(){
@@ -45,34 +74,5 @@ $(function(){
     setTimeout(()=>{
         $("#thumb-container").css({"opacity": 1});
         barClose();
-    }, 1500);
-    let thumb = {
-        count: 0,
-        scale: 1,
-        add: 0.1,
-    }
-    let scaleUpBg = function(e){
-        if(thumb.count < 500){
-            thumb.scale += thumb.add;
-            $("#thumb-container").css({
-                "transform": `scale(${thumb.scale})`
-            });
-            thumb.count += Math.abs(e.wheelDelta)
-        }else{
-            window.removeEventListener("mousewheel", scaleUpBg, { passive: false });
-            $("#thumb-container").css({
-                "transform": "scale(5)",
-                "opacity": 0
-            });
-            setTimeout(()=>{
-                $("#thumb-container").remove();
-                pageActive = true;
-                window.addEventListener("mousewheel", noScroll, { passive: false });
-                window.addEventListener("touchmove", noScroll, { passive: false });
-                startPage();
-            }, 800);
-        };
-    }
-    window.addEventListener("mousewheel", scaleUpBg, { passive: false });
-
+    }, 500);
 });
