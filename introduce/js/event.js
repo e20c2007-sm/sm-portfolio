@@ -1,5 +1,3 @@
-const div = "<div></div>";
-
 let wrapper;
 let windowsFocus = true;
 let scrollFlag = true;
@@ -29,6 +27,8 @@ function addClassCombo(target, cn, delay, num, size){
     }
 }
 
+
+changeThumbBtm();
 $(function(){
     wrapper = $("#site-wrapper");
 
@@ -120,6 +120,14 @@ $(function(){
     });
 
     $(window).scroll(() => {
+        if(timers.change_text.time){
+            clearTimeout(timers.change_text.time);
+            timers.change_text.time = "";
+            timers.change_text.flag = false;
+        }else if(timers.change_text.flag){
+            changeText({"key": "thumb_btm", "target": $("#thumb-bottom")});
+            timers.change_text.flag = false;
+        }
         if(pageActive){
             let wh = window.innerHeight;
             let st = $(window).scrollTop();

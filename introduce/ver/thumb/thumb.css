@@ -157,3 +157,7 @@
     background: #ffffff4c;
     transform: perspective(700px) rotateY(-35deg);
 }
+
+@media screen and (max-width: 768px) {
+    
+}

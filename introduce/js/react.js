@@ -268,3 +268,14 @@ class Circles extends React.Component{
         )
     }
 }
+{/* <div id="thumb-wrapper">
+    <div id="circle-container">
+        <div id="main-circle">
+            <div id="mc-text" class="able-elem">
+                {{value}}
+            </div>
+        </div>
+        <div id="circles-container"></div>
+        <div id="under-text" class="comment">一部酔いやすい表現・アニメーションを使用しています。<br>苦手な方はご注意ください。</div>
+    </div>
+</div> */}

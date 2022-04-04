@@ -1,3 +1,5 @@
+const div = "<div></div>";
+
 let pageActive = false;
 let myData = {
     "skills": "",
@@ -5,6 +7,7 @@ let myData = {
     "works": "",
     "details": ""
 }
+let timers = {};
 
 let pageHeight;
 let screenWidth;
@@ -94,5 +97,5 @@ $(function(){
         resetOffset();
         resetHeight();
     }, 1000);
-    $("#page-gate").load(`./ver/${screen}/`);
+    $("#page-gate").load(`./ver/pc/`);
 });
