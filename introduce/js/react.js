@@ -278,4 +278,90 @@ class Circles extends React.Component{
         <div id="circles-container"></div>
         <div id="under-text" class="comment">一部酔いやすい表現・アニメーションを使用しています。<br>苦手な方はご注意ください。</div>
     </div>
-</div> */}
+</div> 
+
+let mainCurcle = new Vue({
+    el: "#main-circle",
+    data: {
+        value: "HOVER"
+    }
+});
+
+circlesRender();
+
+    $(document).on("mouseover", "#main-circle", function(){
+        let target = $(this);
+        mainCurcle.value = "CLICK";
+        target.addClass("bigger");
+        $(".circles").addClass("move-center");
+    }).on("mouseout", "#main-circle", function(){
+        let target = $(this);
+        mainCurcle.value = "HOVER";
+        target.removeClass("bigger");
+        $(".circles").removeClass("move-center");
+    });
+
+    #circle-container{
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+#main-circle{
+    font-size: 2.5vw;
+    color: #ffffff;
+    background: #ffa551;
+    opacity: 0.3;
+    width: 10vw;
+    height: 10vw;
+    line-height: 10vw;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+#main-circle.bigger{
+    font-size: 5vw;
+    width: 30vw;
+    height: 30vw;
+    line-height: 30vw;
+    border-radius: 30vw;
+    background: #ffa551;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) rotate(765deg);
+}
+#mc-text{
+    text-align: center;
+    transform: rotate(-45deg);
+    user-select: none;
+}
+
+.circles{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+.circles.move-center{
+    transform: translate(-50%, -50%) scale(0);
+}
+
+#under-text{
+    width: 100vw;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 3rem;
+    transition: none;
+}
+
+*/}

@@ -97,5 +97,5 @@ $(function(){
         resetOffset();
         resetHeight();
     }, 1000);
-    $("#page-gate").load(`./ver/pc/`);
+    $("#page-gate").load(`./ver/thumb/`);
 });

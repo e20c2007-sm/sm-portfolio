@@ -1,76 +1,26 @@
-#pc-wrapper{
-    width: 100vw;
-    height: 100vh;
-    background: #ffffff;
-    overflow: hidden;
+
+#white-curtain{
+    width: 150vw;
+    height: 150vh;
     position: fixed;
-    top: 0;
-    z-index: 30;
-}
-#pc-wrapper *{
-    transition: 500ms ease-out;
-}
-#circle-container{
-    width: 100vw;
-    height: 100vh;
-    background: #ffffff;
-    overflow: hidden;
-    position: relative;
-}
-#main-circle{
-    font-size: 2.5vw;
-    color: #ffffff;
-    background: #ffa551;
-    opacity: 0.3;
-    width: 10vw;
-    height: 10vw;
-    line-height: 10vw;
-    text-align: center;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 20;
-    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    pointer-events: none;
 }
-#main-circle.bigger{
-    font-size: 5vw;
-    width: 30vw;
-    height: 30vw;
-    line-height: 30vw;
-    border-radius: 30vw;
-    background: #ffa551;
-    opacity: 1;
-    transform: translateX(-50%) translateY(-50%) rotate(765deg);
+.white-bar{
+    width: 0;
+    height: 50vh;
+    background: #ffffff;
+    transition: 1s;
 }
-#mc-text{
-    text-align: center;
-    transform: rotate(-45deg);
-    user-select: none;
-}
-
-.circles{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-}
-.circles.move-center{
-    transform: translate(-50%, -50%) scale(0);
-}
-
-#under-text{
-    width: 100vw;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 3rem;
-    transition: none;
+.white-bar.show{
+    width: 100%;
 }
 
 
