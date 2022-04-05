@@ -992,6 +992,14 @@ footer{
         z-index: 30;
     }
 
+    #my-face-img{
+        width: 55vw;
+    }
+    .box-frame, .box-frame div{
+        width: 50vw;
+        height: 50vw;
+    }
+
     #prof-container{
         flex-direction: column;
         justify-content: center;

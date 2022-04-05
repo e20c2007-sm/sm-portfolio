@@ -109,5 +109,53 @@
 }
 
 @media screen and (max-width: 768px) {
+    #thumb-ribbon-top{
+        display: none;
+    }
+    #thumb-ribbon-bottom{
+        width: 100vw;
+        height: 10vh;
+    }
     
+    #thumb-bg{
+        width: 100vw;
+        height: 40vh;
+        z-index: 0;
+        position: absolute;
+        bottom: 0;
+    }
+    #thumb-human{
+        width: auto;
+        height: 35vh;
+    }
+    .thumb-msg-container-left{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(0);
+        z-index: 1;
+    }
+    .thumb-msg{
+        color: #eeeeee;
+        font-size: 8rem;
+    }
+    .thumb-msg-container-left .thumb-msg{
+        text-shadow: 0 0 3rem #000000;
+        padding: 0.5rem 1.5rem;
+        background: none;
+        transform: perspective(0) rotateY(0deg);
+    }
+    .thumb-msg-container-right{
+        position: absolute;
+        top: 9.5rem;
+        right: 0;
+        transform: translateY(0);
+        z-index: 1;
+    }
+    .thumb-msg-container-right .thumb-msg{
+        text-shadow: 0 0 3rem #000000;
+        padding: 0.5rem 1.5rem;
+        background: none;
+        transform: perspective(0) rotateY(0);
+    }
 }

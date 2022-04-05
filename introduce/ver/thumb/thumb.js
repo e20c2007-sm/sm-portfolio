@@ -3,6 +3,14 @@ let thumb = {
     scale: 1,
     add: 0.1,
 }
+function scaleOutBg(){
+    window.removeEventListener("mousewheel", scaleUpBg, { passive: false });
+    window.removeEventListener("touchmove", scaleUpBg, { passive: false });
+    $("#thumb-container").css({
+        "transform": "scale(5)",
+        "opacity": 0
+    });
+}
 let scaleUpBg = function(e){
     if(thumb.count < 500){
         thumb.scale += thumb.add;
@@ -11,11 +19,7 @@ let scaleUpBg = function(e){
         });
         thumb.count += Math.abs(e.wheelDelta)
     }else{
-        window.removeEventListener("mousewheel", scaleUpBg, { passive: false });
-        $("#thumb-container").css({
-            "transform": "scale(5)",
-            "opacity": 0
-        });
+        scaleOutBg();
         setTimeout(()=>{
             $("#thumb-container").remove();
             pageActive = true;
@@ -66,6 +70,7 @@ function startThumb(){
             glitch2TimeMax : 100, 
         });
         window.addEventListener("mousewheel", scaleUpBg, { passive: false });
+        window.addEventListener("touchmove", scaleOutBg, { passive: false });
     }, 500);
 }
 
