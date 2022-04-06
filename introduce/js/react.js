@@ -217,57 +217,131 @@ class Container extends React.Component{
     };
 }
 
-function circlesRender(){
-    let circles = [];
-    for(let i=0; i<100; i++){
-        circles.push(
-            {
-                posit: {top: `${randomNum(90)}%`, left: `${randomNum(90)+5}%`},
-                size: `${randomNum(5)}vw`,
-                bg: "#ffd6b0",
-                "class": "circles",
-                delay: `${randomNum(500)}ms`
-            }
-        );
-    };
-    
-    ReactDOM.render(
-        <Circles
-            circles={circles}
-        />,
-        $("#circles-container")[0]
-    );
-    
-}
-class Circles extends React.Component{
+class ThumbObjects extends React.Component{
     render(){
-        let data = this.props.circles;
-        let circleEles = [];
-        data.forEach(e => {
-            circleEles.push(
-              <div
-                class={e.class}
-                style={{
-                    top: e.posit.top,
-                    left: e.posit.left,
-                    width: e.size,
-                    height: e.size,
-                    background: e.bg,
-                    "border\-radius": e.size,
-                    "transition\-duration": "200ms",
-                    "transition\-delay": e.delay
+        let theme = this.props.data.theme[this.props.data.index];
 
-                }}
-              />  
-            );
-        });
         return(
-            <div>
-                {circleEles}
+            <div class={`theme-item theme-move ${theme.className}`} data-theme={theme.className}>
+                <div className="theme-char">{theme.char}</div>
             </div>
         )
     }
 }
+let themeData = {
+    "theme": [
+        {
+            "char": "楽",
+            "className": "fun"
+        },
+        {
+            "char": "悲",
+            "className": "sad"
+        },
+        {
+            "char": "熱",
+            "className": "hot"
+        },
+        {
+            "char": "冷",
+            "className": "cold"
+        },
+        {
+            "char": "嬉",
+            "className": "glad"
+        },
+        {
+            "char": "静",
+            "className": "quiet"
+        },
+        {
+            "char": "動",
+            "className": "dynamic"
+        },
+        {
+            "char": "美",
+            "className": "beauty"
+        },
+        {
+            "char": "和",
+            "className": "japan"
+        },
+        {
+            "char": "懐",
+            "className": "nostalgic"
+        }
+    ],
+    "index": 0
+}
+function createThumbItem(){
+    let elem = $("<div></div>");
+    elem.appendTo("#thumb-roll");
+    ReactDOM.render(
+        <ThumbObjects
+            data={themeData}
+        />,
+        elem[0]
+    );
+    themeData.index++;
+    if(themeData.index >= themeData.theme.length){
+        themeData.index = 0;
+    }
+    setTimeout(()=>{
+        createThumbItem();
+    }, 3000);
+}
+
+// function circlesRender(){
+//     let circles = [];
+//     for(let i=0; i<100; i++){
+//         circles.push(
+//             {
+//                 posit: {top: `${randomNum(90)}%`, left: `${randomNum(90)+5}%`},
+//                 size: `${randomNum(5)}vw`,
+//                 bg: "#ffd6b0",
+//                 "class": "circles",
+//                 delay: `${randomNum(500)}ms`
+//             }
+//         );
+//     };
+    
+//     ReactDOM.render(
+//         <Circles
+//             circles={circles}
+//         />,
+//         $("#circles-container")[0]
+//     );
+    
+// }
+// class Circles extends React.Component{
+//     render(){
+//         let data = this.props.circles;
+//         let circleEles = [];
+//         data.forEach(e => {
+//             circleEles.push(
+//             <div
+//                 class={e.class}
+//                 style={{
+//                     top: e.posit.top,
+//                     left: e.posit.left,
+//                     width: e.size,
+//                     height: e.size,
+//                     background: e.bg,
+//                     "border\-radius": e.size,
+//                     "transition\-duration": "200ms",
+//                     "transition\-delay": e.delay
+
+//                 }}
+//             />  
+//             );
+//         });
+//         return(
+//             <div>
+//                 {circleEles}
+//             </div>
+//         )
+//     }
+// }
 {/* <div id="thumb-wrapper">
     <div id="circle-container">
         <div id="main-circle">

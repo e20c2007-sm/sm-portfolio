@@ -30,6 +30,7 @@ function addClassCombo(target, cn, delay, num, size){
 
 changeThumbBtm();
 $(function(){
+    createThumbItem();
     wrapper = $("#site-wrapper");
 
     let closeMenu = function(){

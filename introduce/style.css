@@ -10,7 +10,7 @@
     src: url(../font/aoyagireisyosimo_ttf_2_01.ttf);
 }
 @font-face {
-    font-family: writed;
+    font-family: writted;
     src: url(../font/gomarice_mukasi_mukasi.ttf);
 }
 @font-face{
@@ -43,6 +43,7 @@
     line-height: 5.2vw;
     position: relative;
     display: none;
+    user-select: none;
 }
 .well-said::before, .well-said::after{
     content: "";
@@ -109,6 +110,19 @@ main{
 #page-gate{
     position: absolute;
     z-index: 50;
+}
+
+#thumb-roll{
+    opacity: 0;
+}
+.theme-item{
+    text-align: center;
+    position: absolute;
+    background: red;
+    z-index: 1;
+}
+.theme-char{
+    color: var(--font-white);
 }
 
 #thumb-bottom{
@@ -256,7 +270,7 @@ main{
     line-height: 8rem;
     background: #ffe656;
     color: #000000c5;
-    font-family: writed;
+    font-family: writted;
     position: relative;
     box-sizing: content-box;
 }

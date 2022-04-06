@@ -3,6 +3,7 @@ HTML,true
 CSS,true
 JavaScript,true
 PHP,false
+WordPress,false
 Java,false
 Node.js,false
 jQuery,true

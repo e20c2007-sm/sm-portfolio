@@ -86,6 +86,7 @@ function startPage(){
     $("#page-thumb-bg").animate({"opacity": 1}, 2000);
     $("#thumb-bottom .well-said").fadeIn(2000, ()=>{
         beAble();
+        $("#thumb-roll").animate({"opacity": 1}, 500);
     });
 }
 

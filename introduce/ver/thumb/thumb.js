@@ -10,6 +10,13 @@ function scaleOutBg(){
         "transform": "scale(5)",
         "opacity": 0
     });
+    setTimeout(()=>{
+        $("#thumb-container").remove();
+        pageActive = true;
+        window.addEventListener("mousewheel", noScroll, { passive: false });
+        window.addEventListener("touchmove", noScroll, { passive: false });
+        startPage();
+    }, 800);
 }
 let scaleUpBg = function(e){
     if(thumb.count < 500){
@@ -20,13 +27,6 @@ let scaleUpBg = function(e){
         thumb.count += Math.abs(e.wheelDelta)
     }else{
         scaleOutBg();
-        setTimeout(()=>{
-            $("#thumb-container").remove();
-            pageActive = true;
-            window.addEventListener("mousewheel", noScroll, { passive: false });
-            window.addEventListener("touchmove", noScroll, { passive: false });
-            startPage();
-        }, 800);
     };
 }
 

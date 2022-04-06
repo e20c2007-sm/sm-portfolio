@@ -92,7 +92,7 @@
     text-shadow: -0.5rem 0.5rem 3rem #000000;
     padding: 10vh 3rem 10vh 10rem;
     background: #ffffff4c;
-    transform: perspective(700px) rotateY(35deg);
+    transform: perspective(850px) rotateY(50deg);
 }
 .thumb-msg-container-right{
     position: absolute;
@@ -105,7 +105,7 @@
     text-shadow: 0.5rem 0.5rem 3rem #000000;
     padding: 10vh 10rem 10vh 3rem;
     background: #ffffff4c;
-    transform: perspective(700px) rotateY(-35deg);
+    transform: perspective(850px) rotateY(-50deg);
 }
 
 @media screen and (max-width: 768px) {

@@ -245,3 +245,29 @@
 #my-face-img.light-up{
     animation: lightUp 10s linear infinite, scaleUp 3s linear forwards;
 }
+
+@keyframes tiMove{
+    from{
+        width: 45vw;
+        height: 45vw;
+        font-size: 30vw;
+        line-height: 45vw;
+        top: 50%;
+        left: 120vw;
+        transform-style: preserve-3d;
+        transform: translateY(-50%) perspective(1000px) rotateY(-60deg);
+    }to{
+        width: 4vw;
+        height: 4vw;
+        font-size: 3vw;
+        line-height: 4vw;
+        top: 40%;
+        left: 50%;
+        transform-style: preserve-3d;
+        transform: translate(-50%, -50%) perspective(500px) rotateY(-5deg);
+    }
+}
+
+.theme-move{
+    animation: tiMove 8s linear forwards;
+}
