@@ -30,7 +30,9 @@ function addClassCombo(target, cn, delay, num, size){
 
 changeThumbBtm();
 $(function(){
-    createThumbItem();
+    if(screen == "pc"){
+        createThumbItem();
+    }
     wrapper = $("#site-wrapper");
 
     let closeMenu = function(){
@@ -203,7 +205,7 @@ $(function(){
     }).on("animationend", "#work-memo", ()=>{
         setTimeout(()=>{
             addClassCombo($(".work-item"), "float-in", 1000, 0, $(".work-item").length);
-        }, 1000);
+        }, 200);
     }).on("animationend", "#detail-container", ()=>{
         setTimeout(()=>{
             addClassCombo($(".detail-item"), "slide-in", 500, 0, $(".detail-item").length);
