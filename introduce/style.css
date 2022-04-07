@@ -881,6 +881,7 @@ footer{
     filter: brightness(120%);
     opacity: 1;
     position: relative;
+    will-change: transform filter;
     transition: 500ms;
 }
 .bg-box{
