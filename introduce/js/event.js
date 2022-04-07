@@ -30,9 +30,6 @@ function addClassCombo(target, cn, delay, num, size){
 
 changeThumbBtm();
 $(function(){
-    if(screen == "pc"){
-        createThumbItem();
-    }
     wrapper = $("#site-wrapper");
 
     let closeMenu = function(){

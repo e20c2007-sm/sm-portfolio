@@ -291,6 +291,51 @@ function createThumbItem(){
     }, 3000);
 }
 
+class ThumbBg extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            src: "",
+            index: 0,
+        }
+        this.fileLength = 10;
+        this.path = "";
+        this.timer;
+    }
+
+    componentDidMount(){
+        this.changeGif();
+        this.timer = setInterval(()=>{
+            this.changeGif();
+        }, 5000);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.timer);
+    }
+
+    changeGif(){
+        let index = this.state.index;
+        let reIndex = index + 1;
+        if(!(reIndex < this.fileLength)){
+            reIndex = 0;
+        }
+        this.setState({
+            src: `${this.path}thumb${index}.gif`,
+            index: reIndex
+        });
+        console.log(this.state.index);
+    }
+
+    render(){
+        return(
+            <div id="thumb-bg-inner">
+                <img src={this.state.src} alt="画像はイメージです。"/>
+            </div>
+        )
+    }
+}
+
 // function circlesRender(){
 //     let circles = [];
 //     for(let i=0; i<100; i++){
