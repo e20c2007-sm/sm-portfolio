@@ -324,7 +324,6 @@ class ThumbBg extends React.Component{
             src: `${this.path}thumb${index}.gif`,
             index: reIndex
         });
-        console.log(this.state.index);
     }
 
     render(){
