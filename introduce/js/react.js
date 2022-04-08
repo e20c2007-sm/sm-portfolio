@@ -298,8 +298,8 @@ class ThumbBg extends React.Component{
             src: "",
             index: 0,
         }
-        this.fileLength = 10;
-        this.path = "";
+        this.fileLength = 4;
+        this.path = "./gallery/thumb/page_thumb/";
         this.timer;
     }
 
@@ -329,7 +329,7 @@ class ThumbBg extends React.Component{
 
     render(){
         return(
-            <div id="thumb-bg-inner">
+            <div id="page-bg-inner">
                 <img src={this.state.src} alt="画像はイメージです。"/>
             </div>
         )

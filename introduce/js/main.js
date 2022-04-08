@@ -83,6 +83,10 @@ function startPage(){
     $("#my-face-img").addClass("out");
     $("#main-contents").show();
     $(".footers").removeClass("footers");
+    ReactDOM.render(
+        <ThumbBg />,
+        $("#page-thumb-bg")[0]
+    );
     $("#page-thumb-bg").animate({"opacity": 1}, 2000);
     $("#thumb-bottom .well-said").fadeIn(2000, ()=>{
         beAble();

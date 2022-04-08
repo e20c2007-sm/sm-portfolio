@@ -115,7 +115,6 @@ $(function(){
     });
 
     $(document).on("click", "#arrow-container", () => {
-        let main = $("#main-contents").offset().top;
         $('html, body').animate({scrollTop: contentTop["prof"]}, 1000);
     });
 
