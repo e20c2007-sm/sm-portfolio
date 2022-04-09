@@ -76,7 +76,7 @@ function noScroll(e){
     e.preventDefault();
 }
 function beAble(){
-    window.removeEventListener("mousewheel", noScroll, { passive: false });
+    window.removeEventListener("wheel", noScroll, { passive: false });
     window.removeEventListener("touchmove", noScroll, { passive: false });
 }
 function startPage(){

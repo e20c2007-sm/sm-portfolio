@@ -4,8 +4,8 @@ let thumb = {
     add: 0.1,
 }
 function scaleOutBg(){
-    window.removeEventListener("mousewheel", scaleUpBg, { passive: false });
-    window.removeEventListener("touchmove", scaleUpBg, { passive: false });
+    window.removeEventListener("wheel", scaleUpBg, { passive: false });
+    window.removeEventListener("touchend", scaleUpBg, { passive: false });
     $("#thumb-container").css({
         "transform": "scale(5)",
         "opacity": 0
@@ -13,7 +13,7 @@ function scaleOutBg(){
     setTimeout(()=>{
         $("#thumb-container").remove();
         pageActive = true;
-        window.addEventListener("mousewheel", noScroll, { passive: false });
+        window.addEventListener("wheel", noScroll, { passive: false });
         window.addEventListener("touchmove", noScroll, { passive: false });
         startPage();
     }, 800);
@@ -69,15 +69,15 @@ function startThumb(){
             // set max time for glitch 2 elem
             glitch2TimeMax : 100, 
         });
-        window.addEventListener("mousewheel", scaleUpBg, { passive: false });
-        window.addEventListener("touchmove", scaleOutBg, { passive: false });
+        window.addEventListener("wheel", scaleUpBg, { passive: false });
+        window.addEventListener("touchend", scaleOutBg, { passive: false });
     }, 500);
 }
 
 $(function(){
     bar.size = $(".white-bar").length;
     setTimeout(()=>{
-        $("#thumb-container").css({"opacity": 1});
+        $("#thumb-container").animate({"opacity": 1}, 100);
         barClose();
     }, 500);
 });

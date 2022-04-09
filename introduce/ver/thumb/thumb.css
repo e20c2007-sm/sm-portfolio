@@ -29,7 +29,7 @@
     height: 100vh;
     position: relative;
     user-select: none;
-    transition: 500ms;
+    transition: 500ms ease-in;
     opacity: 0;
 }
 #thumb-ribbon-top{
@@ -109,6 +109,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    #thumb-container{
+        transition: 3s ease-in;
+    }
+
     #thumb-ribbon-top{
         display: none;
     }
