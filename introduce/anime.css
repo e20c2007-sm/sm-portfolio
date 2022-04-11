@@ -220,17 +220,6 @@
     animation: scaleFloat 15s linear infinite, myFace 15s linear infinite;
 }
 
-@keyframes lightUp{
-    0%{
-        filter: brightness(120%) drop-shadow(0 0 0vw #fff0c5);
-    }
-    50%{
-        filter: brightness(120%) drop-shadow(0 0 5vw #fbff7a);
-    }
-    100%{
-        filter: brightness(120%) drop-shadow(0 0 0vw #fff0c5);
-    }
-}
 @keyframes scaleOut{
     from{
         transform: scale(1) rotate(360deg) rotateY(360deg) rotateX(360deg);
@@ -243,7 +232,8 @@
     animation: scaleOut 500ms linear;
 }
 #my-face-img.light-up{
-    animation: lightUp 10s linear infinite, scaleUp 3s linear forwards;
+    filter: brightness(120%) drop-shadow(0 0 5vw #fbff7a);
+    animation: scaleUp 3s linear forwards;
 }
 
 @keyframes tiMove{

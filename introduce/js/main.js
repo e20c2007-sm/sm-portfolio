@@ -87,7 +87,8 @@ function startPage(){
         <ThumbBg />,
         $("#page-thumb-bg")[0]
     );
-    $("#page-thumb-bg").animate({"opacity": 1}, 2000);
+    $("#page-thumb").addClass("show");
+    $("#page-thumb-bg").fadeIn(2000);
     $("#thumb-bottom .well-said").fadeIn(2000, ()=>{
         beAble();
         $("#thumb-roll").animate({"opacity": 1}, 500);

@@ -102,9 +102,9 @@ main{
 #page-thumb{
     width: 100vw;
     height: 100vh;
-    background: #ffffff2d;
     overflow: hidden;
     position: relative;
+    z-index: 1;
 }
 
 #page-gate{
@@ -142,16 +142,20 @@ main{
 
 #page-thumb-bg{
     width: 100vw;
-    height: 100vh;
+    height: 115vh;
     position: absolute;
     background: #2f2f2fb1;
+    overflow: hidden;
     top: 0;
-    opacity: 0;
+    left: 50%;
+    display: none;
     z-index: 0;
+    transform: translateX(-50%) scaleX(1.5);
+    border-radius: 0 0 115vh 115vh;
 }
 #page-bg-inner{
     width: 100vw;
-    height: 100vh;
+    height: 115vh;
     position: relative;
     overflow: hidden;
 }
@@ -163,17 +167,16 @@ main{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scaleX(1);
 }
 
 #main-contents{
     width: 100vw;
     padding-top: 10vh;
     padding-bottom: 46rem;
-    background: #ffffff7e;
     position: relative;
 }
-#main-contents::after{
+/* #main-contents::after{
     content: "\025bc";
     font-size: 10vw;
     font-family: Arial, Helvetica, sans-serif;
@@ -187,7 +190,7 @@ main{
     position: absolute;
     top: 0;
     left: 50%;
-}
+} */
 
 .content{
     width: 85vw;
