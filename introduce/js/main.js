@@ -90,6 +90,7 @@ function startPage(){
     $("#page-thumb").addClass("show");
     $("#page-thumb-bg").fadeIn(2000);
     $("#thumb-bottom .well-said").fadeIn(2000, ()=>{
+        $("#site-wrapper").css("background", "#ffffff4e");
         beAble();
         $("#thumb-roll").animate({"opacity": 1}, 500);
     });
