@@ -9,7 +9,7 @@ vues.centerText = new Vue({
             above: "PORTFOLIO",
             under: "WEBLOG",
             guide_above: "僕のポートフォリオです。プロフィールや技能・制作物などを掲載しています。",
-            guide_under: "僕の運営するブログです。主にプログラミング分野の記事を投稿していく予定。"
+            guide_under: "僕の運営するブログです。主にプログラミング分野の記事を投稿しています。"
         }
     }
 });
