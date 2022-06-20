@@ -84,6 +84,8 @@ function Skill(props){
             <div id="skill-container">
                 <div class="skill-title">
                     利用可能な言語・技術
+                </div>
+                <div class="skill-sort-container">
                     <div class="skill-sort able-elem"><div class="check-box"><div class="none-check"></div></div>このサイトで使用中</div>
                 </div>
                 <div class="skill-cloud">
